@@ -23,9 +23,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuItems = [
-      { label: 'Home', routerLink: '/home' },
-      { label: 'Usuários', routerLink: '/users' },
-      { label: 'Sair', command: () => this.logout() }
+      { label: 'Home', routerLink: '/home', icon: 'pi pi-home' },
+      { label: 'Usuários', routerLink: '/users', icon: 'pi pi-users' },
+      { label: 'Sair', command: () => this.logout(), icon: 'pi pi-sign-out' }
     ];
   }
 

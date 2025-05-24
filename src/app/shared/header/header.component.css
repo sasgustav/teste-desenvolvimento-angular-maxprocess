@@ -1,0 +1,7 @@
+:host ::ng-deep .p-menubar {
+  border-radius: 0;
+}
+
+:host {
+  display: block;
+}

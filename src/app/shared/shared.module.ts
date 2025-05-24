@@ -10,9 +10,16 @@ import { MessageModule } from 'primeng/message';
 import { ChartModule } from 'primeng/chart';
 import { FooterComponent } from './footer/footer.component';
 import { MetricCardComponent } from './metric-card/metric-card.component';
+import { HeaderComponent } from './header/header.component';
+import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 
 @NgModule({
-  declarations: [FooterComponent, MetricCardComponent],
+  declarations: [
+    FooterComponent,
+    MetricCardComponent,
+    HeaderComponent,
+    BreadcrumbsComponent,
+  ],
   imports: [
     CommonModule,
     TableModule,
@@ -35,6 +42,8 @@ import { MetricCardComponent } from './metric-card/metric-card.component';
     ChartModule,
     FooterComponent,
     MetricCardComponent,
+    HeaderComponent,
+    BreadcrumbsComponent,
   ],
 })
 export class SharedModule {}
