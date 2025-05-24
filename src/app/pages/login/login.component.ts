@@ -20,10 +20,31 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Caso o usuário já possua um token válido no localStorage,
+    // redirecionamos diretamente para a home para evitar
+    // exibir novamente o formulário de login.
+    const token = this.auth.getToken();
+    if (token && !this.tokenExpired(token)) {
+      this.router.navigate(['/home']);
+      return;
+    }
+
     const saved = localStorage.getItem('rememberedUsername');
     if (saved) {
       this.username = saved;
       this.remember = true;
+    }
+  }
+
+  /**
+   * Verifica se o token JWT está expirado.
+   */
+  private tokenExpired(token: string): boolean {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1])) as { exp: number };
+      return payload.exp * 1000 < Date.now();
+    } catch {
+      return true;
     }
   }
 
