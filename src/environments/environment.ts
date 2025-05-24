@@ -1,4 +1,9 @@
 export const environment = {
   production: false,
-  apiBase: 'https://localhost:5001/api'
+  /**
+   * Base URL da API utilizada em desenvolvimento. Por
+   * padrao o servidor mock roda em http://localhost:3000
+   * conforme instrucoes do README.
+   */
+  apiBase: 'http://localhost:3000'
 };

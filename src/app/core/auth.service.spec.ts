@@ -23,7 +23,7 @@ describe('AuthService', () => {
 
   it('should save token on login', () => {
     service.login('demo-gustavo@gmail.com', '123456').subscribe();
-    const req = httpMock.expectOne(`${environment.apiBase}/auth/signin`);
+    const req = httpMock.expectOne(`${environment.apiBase}/auth/login`);
     req.flush({ token: 'test-token' });
     expect(localStorage.getItem('token')).toBe('test-token');
   });
