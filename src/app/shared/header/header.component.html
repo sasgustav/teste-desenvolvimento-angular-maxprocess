@@ -1,12 +1,17 @@
 <nav class="header-nav" aria-label="Menu principal" role="navigation">
-  <p-menubar [model]="items" class="app-menubar" role="menubar" aria-label="Menu principal">
+  <p-menubar
+    [model]="items"
+    class="app-menubar"
+    role="menubar"
+    aria-label="Menu principal"
+  >
     <ng-template pTemplate="start">
       <button
         type="button"
         class="menu-toggle p-link"
         (click)="toggleMobileMenu()"
         (keydown.enter)="toggleMobileMenu()"
-        [attr.aria-expanded]="mobileMenuVisible"
+        [attr.aria-expanded]="isMobileMenuOpen"
         aria-label="Abrir menu"
       >
         <i class="pi pi-bars"></i>
@@ -24,6 +29,7 @@
         (click)="handleItemCommand(item, $event)"
         (keydown.enter)="handleItemCommand(item, $event)"
         class="p-menuitem-link"
+        role="menuitem"
       >
         <span class="p-menuitem-icon" [ngClass]="item.icon"></span>
         <span class="p-menuitem-text">{{ item.label }}</span>
@@ -43,13 +49,14 @@
   </p-menubar>
 
   <p-sidebar
-    [(visible)]="mobileMenuVisible"
+    [(visible)]="isMobileMenuOpen"
     position="left"
     [baseZIndex]="10000"
     class="mobile-sidebar"
     aria-label="Menu móvel"
     ariaCloseLabel="Fechar menu"
     (onHide)="closeMobileMenu()"
+    [modal]="true"
   >
     <p-panelMenu
       [model]="items"
