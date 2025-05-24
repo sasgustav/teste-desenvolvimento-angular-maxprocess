@@ -6,8 +6,9 @@ This repository contains a simple Angular application used for the MaxProcess te
 
 ```bash
 npm install
-ng serve
+npm start
 ```
+The repository now includes the standard Angular configuration files such as `package.json`, `tsconfig` and `polyfills.ts` required to run the application.
 
 ## Implemented Improvements
 
