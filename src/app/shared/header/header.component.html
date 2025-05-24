@@ -36,20 +36,19 @@
       </a>
     </ng-template>
     <ng-template pTemplate="end">
-      <div class="profile">
-        <ng-container *ngIf="userAvatar; else defaultAvatar">
-          <img [src]="userAvatar" alt="Avatar" class="avatar-icon" />
-        </ng-container>
-        <ng-template #defaultAvatar>
-          <i class="pi pi-user avatar-icon"></i>
-        </ng-template>
-      </div>
+      <button
+        pButton
+        type="button"
+        icon="pi pi-sign-out"
+        label="Sair"
+        class="logout-button"
+        (click)="logout()"
+      ></button>
     </ng-template>
   </p-menubar>
 
   <div class="user-info">
     <span class="username">{{ userName }}</span>
-    <br />
     <small class="email">{{ userEmail }}</small>
   </div>
 

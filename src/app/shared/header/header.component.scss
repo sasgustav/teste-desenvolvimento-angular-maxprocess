@@ -13,6 +13,40 @@
   padding: 0 0rem;
 }
 
+/* Itens do menu (centro) */
+:host ::ng-deep .p-menubar-root-list {
+  flex: 1;
+  justify-content: center;
+  gap: 1rem;
+}
+:host ::ng-deep .p-menuitem-link {
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: background-color 0.2s, color 0.2s;
+}
+:host ::ng-deep .p-menuitem-link:hover,
+:host ::ng-deep .p-menuitem-link.p-highlight {
+  background: var(--primary-color-dark);
+}
+
+/* Área de usuário e botão sair (end) */
+:host ::ng-deep .p-menubar-end {
+  margin-left: auto;
+  gap: 1rem;
+}
+.logout-button {
+  border-radius: 25px;
+  background: #fff;
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  transition: background-color 0.2s;
+}
+.logout-button:hover {
+  background: #f0f0f0;
+}
+
 :host ::ng-deep .p-menubar-root-list {
   flex: 1;
   justify-content: center;

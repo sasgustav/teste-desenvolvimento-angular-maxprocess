@@ -1,11 +1,12 @@
 import { Component, Input, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
-import { MenuItem, MenuItemCommandEvent } from 'primeng/api';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   @Input() items: MenuItem[] = [];
@@ -14,41 +15,47 @@ export class HeaderComponent implements OnInit {
 
   userName = '';
   userEmail = '';
+  isMobileMenuOpen = false;
+  isMobile = window.innerWidth <= 768;
+  isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
 
-  constructor(private auth: AuthService) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.userName = this.auth.getUserName() || '';
     this.userEmail = this.auth.getUserEmail() || '';
   }
 
-  isMobileMenuOpen = false;
-  isMobile = window.innerWidth <= 768;
-  isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
-
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
+  onResize(event: Event): void {
     const width = (event.target as Window).innerWidth;
     this.isMobile = width <= 768;
     this.isTablet = width > 768 && width <= 1024;
   }
 
   @HostListener('document:keydown.escape')
-  onEsc() {
+  onEsc(): void {
     this.closeMobileMenu();
   }
 
   handleItemCommand(item: MenuItem, originalEvent: Event): void {
-    const event: MenuItemCommandEvent = { originalEvent, item };
-    item.command?.(event);
+    item.command?.({ originalEvent, item });
     this.closeMobileMenu();
   }
 
-  toggleMobileMenu() {
+  toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  closeMobileMenu() {
+  closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
+  }
+
+  logout(): void {
+    this.auth.logout();
+    this.router.navigate(['/auth/login']);
   }
 }
