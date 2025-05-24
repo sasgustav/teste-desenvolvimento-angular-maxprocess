@@ -40,6 +40,15 @@ npm run start:mock
 
 A API ficará disponível em `http://localhost:3000`.
 
+## Login de Demonstração
+
+Para entrar na aplicação utilize o usuário de demonstração abaixo:
+
+- **Email:** `demo-gustavo@gmail.com`
+- **Senha:** `123456`
+
+Abra `http://localhost:4200/auth/login` após executar `npm start` e informe essas credenciais.
+
 ## Testes
 
 - **Unitários:**

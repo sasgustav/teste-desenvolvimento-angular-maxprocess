@@ -8,7 +8,7 @@ server.use(jsonServer.bodyParser);
 
 server.post('/auth/login', (req, res) => {
   const { username, password } = req.body;
-  if (username === 'admin' && password === '123') {
+  if (username === 'demo-gustavo@gmail.com' && password === '123456') {
     return res.json({ token: 'fake-jwt-token' });
   }
   res.status(401).json({ message: 'Unauthorized' });
