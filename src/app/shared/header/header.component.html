@@ -45,7 +45,7 @@
         <ng-template #command>
           <button
             class="mobile-menu-link"
-            (click)="item.command && item.command(); closeMobileMenu()"
+            (click)="item.command && item.command($event); closeMobileMenu()"
             role="menuitem"
           >
             <i [ngClass]="item.icon"></i>
