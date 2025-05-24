@@ -1,0 +1,11 @@
+<div class="filters" aria-label="Filtros">
+  <span class="p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input pInputText type="text" placeholder="Buscar por nome" [(ngModel)]="filterName" (input)="apply()" class="w-full" />
+  </span>
+  <span class="p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input pInputText type="text" placeholder="Buscar por e-mail" [(ngModel)]="filterEmail" (input)="apply()" class="w-full" />
+  </span>
+  <button pButton type="button" label="Limpar filtros" class="clear-btn" (click)="clearFilters()"></button>
+</div>

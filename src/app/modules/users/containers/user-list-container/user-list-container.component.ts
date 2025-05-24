@@ -1,23 +1,19 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UserService } from '../../../core/user.service';
-import { User } from '../../../models/user';
+import { UserService } from '../../../../core/user.service';
+import { User } from '../../../../models/user';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-user-list',
-  templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss'],
+  selector: 'app-user-list-container',
+  templateUrl: './user-list-container.component.html',
+  styleUrls: ['./user-list-container.component.scss'],
   providers: [ConfirmationService, MessageService],
 })
-export class UserListComponent implements OnInit, OnDestroy {
+export class UserListContainerComponent implements OnInit, OnDestroy {
   users: User[] = [];
   filteredUsers: User[] = [];
   loading = false;
-  rows = 10;
-  filterName = '';
-  filterEmail = '';
-  skeletonRows = Array.from({ length: 10 });
   private subscription!: Subscription;
 
   constructor(
@@ -42,10 +38,7 @@ export class UserListComponent implements OnInit, OnDestroy {
         this.filteredUsers = [...this.users];
       },
       error: () => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Erro ao carregar usuários',
-        });
+        this.messageService.add({ severity: 'error', summary: 'Erro ao carregar usuários' });
         this.loading = false;
       },
       complete: () => {
@@ -54,21 +47,15 @@ export class UserListComponent implements OnInit, OnDestroy {
     });
   }
 
-  applyFilters(): void {
+  onFilter(change: { name: string; email: string }): void {
     this.filteredUsers = this.users.filter((u) => {
-      const nameMatch = u.name
-        ?.toLowerCase()
-        .includes(this.filterName.toLowerCase());
-      const emailMatch = u.email
-        .toLowerCase()
-        .includes(this.filterEmail.toLowerCase());
+      const nameMatch = u.name?.toLowerCase().includes(change.name.toLowerCase());
+      const emailMatch = u.email.toLowerCase().includes(change.email.toLowerCase());
       return nameMatch && emailMatch;
     });
   }
 
   clearFilters(): void {
-    this.filterName = '';
-    this.filterEmail = '';
     this.filteredUsers = [...this.users];
   }
 
@@ -96,17 +83,11 @@ export class UserListComponent implements OnInit, OnDestroy {
     }
     this.userService.deleteUser(user.id).subscribe({
       next: () => {
-        this.messageService.add({
-          severity: 'success',
-          summary: 'Usuário excluído',
-        });
+        this.messageService.add({ severity: 'success', summary: 'Usuário excluído' });
         this.loadUsers();
       },
       error: () => {
-        this.messageService.add({
-          severity: 'error',
-          summary: 'Erro ao excluir usuário',
-        });
+        this.messageService.add({ severity: 'error', summary: 'Erro ao excluir usuário' });
       },
     });
   }
