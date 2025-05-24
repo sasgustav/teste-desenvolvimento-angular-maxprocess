@@ -37,3 +37,14 @@ The base project already demonstrated a straightforward JWT authentication flow 
 - Enabled animations module required by PrimeNG.
 
 These changes make the example closer to a real world Angular application and easier to extend.
+
+## Design Enhancements
+
+To improve the user experience the application now takes advantage of PrimeNG's layout components:
+
+- Navigation rewritten using `Menubar` for a cleaner header.
+- Pages are wrapped in `Card` components to provide visual separation and padding.
+- Login form uses `Password` and `Message` components and better spacing with PrimeFlex.
+- Added PrimeIcons stylesheet to display icons used by PrimeNG widgets.
+
+These updates modernize the visual design while keeping the code simple and maintainable.

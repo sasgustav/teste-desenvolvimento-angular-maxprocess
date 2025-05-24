@@ -15,7 +15,11 @@ import { UserService } from './services/user.service';
 
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { MenubarModule } from 'primeng/menubar';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { ButtonModule } from 'primeng/button';
     FormsModule,
     TableModule,
     InputTextModule,
-    ButtonModule
+    PasswordModule,
+    ButtonModule,
+    CardModule,
+    MenubarModule,
+    MessageModule
   ],
   providers: [
     AuthService,
