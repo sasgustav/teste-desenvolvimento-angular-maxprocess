@@ -1,6 +1,16 @@
 
-<div class="home-container p-m-4">
-  <p-card header="Dashboard">
+<div class="home-wrapper">
+  <div class="metrics-grid">
+    <app-metric-card
+      *ngFor="let metric of metrics"
+      [icon]="metric.icon"
+      [title]="metric.title"
+      [value]="metric.value"
+      [color]="metric.color"
+    ></app-metric-card>
+  </div>
+
+  <p-card header="Novos usuários por mês" class="chart-card">
     <p-chart type="bar" [data]="chartData"></p-chart>
   </p-card>
 </div>
