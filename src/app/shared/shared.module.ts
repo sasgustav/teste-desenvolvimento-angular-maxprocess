@@ -8,6 +8,7 @@ import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
 import { MenuModule } from 'primeng/menu';
 import { SidebarModule } from 'primeng/sidebar';
+import { PanelMenuModule } from 'primeng/panelmenu';
 import { MessageModule } from 'primeng/message';
 import { ChartModule } from 'primeng/chart';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
@@ -35,6 +36,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     MenubarModule,
     MenuModule,
     SidebarModule,
+    PanelMenuModule,
     MessageModule,
     ChartModule,
     ConfirmDialogModule,
@@ -50,6 +52,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     MenubarModule,
     MenuModule,
     SidebarModule,
+    PanelMenuModule,
     MessageModule,
     ChartModule,
     ConfirmDialogModule,

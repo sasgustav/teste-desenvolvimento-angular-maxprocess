@@ -8,7 +8,12 @@
     </ng-template>
     <ng-template pTemplate="end">
       <div class="profile">
-        <img [src]="userAvatar" alt="Avatar" class="avatar-icon" />
+        <ng-container *ngIf="userAvatar; else defaultAvatar">
+          <img [src]="userAvatar" alt="Avatar" class="avatar-icon" />
+        </ng-container>
+        <ng-template #defaultAvatar>
+          <i class="pi pi-user avatar-icon"></i>
+        </ng-template>
         <span class="username">{{ userName }}</span>
         <button
           type="button"
@@ -32,29 +37,6 @@
     aria-label="Menu móvel"
     ariaCloseLabel="Fechar menu"
   >
-    <ul class="mobile-menu" role="menu">
-      <li *ngFor="let item of items" role="none">
-        <a
-          *ngIf="item.routerLink; else command"
-          [routerLink]="item.routerLink"
-          class="mobile-menu-link"
-          role="menuitem"
-          (click)="closeMobileMenu()"
-        >
-          <i [ngClass]="item.icon"></i>
-          <span>{{ item.label }}</span>
-        </a>
-        <ng-template #command>
-          <button
-            class="mobile-menu-link"
-            (click)="handleItemCommand(item, $event)"
-            role="menuitem"
-          >
-            <i [ngClass]="item.icon"></i>
-            <span>{{ item.label }}</span>
-          </button>
-        </ng-template>
-      </li>
-    </ul>
+    <p-panelMenu [model]="items" class="mobile-panel-menu"></p-panelMenu>
   </p-sidebar>
 </nav>
