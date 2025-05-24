@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UserService } from '../../../core/user.service';
-import { User } from '../../../models/user';
+import { UserService } from '../../../../core/user.service';
+import { User } from '../../../../models/user';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
 
@@ -33,7 +33,7 @@ export class UserListContainerComponent implements OnInit, OnDestroy {
   loadUsers(): void {
     this.loading = true;
     this.subscription = this.userService.getUsers().subscribe({
-      next: (data) => {
+      next: (data: User[]) => {
         this.users = data;
         this.filteredUsers = [...this.users];
       },

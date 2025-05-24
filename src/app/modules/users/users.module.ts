@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsersComponent } from '../../pages/users/users.component';
 import { UserFilterComponent } from './components/user-filter/user-filter.component';
 import { UserTableComponent } from './components/user-table/user-table.component';
 import { UserListContainerComponent } from './containers/user-list-container/user-list-container.component';
@@ -10,7 +9,6 @@ import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
   declarations: [
-    UsersComponent,
     UserFilterComponent,
     UserTableComponent,
     UserListContainerComponent,
