@@ -3,13 +3,12 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
   padding: 2rem;
 }
 
 .login-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 520px;
   border-radius: var(--border-radius);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   overflow: hidden;
