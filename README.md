@@ -32,7 +32,7 @@ Futuramente é possível ampliar os testes, tratar renovação de token e armaze
 
 ## Mock da API
 
-Execute o servidor de mock para simular `/auth/login` e `/usuario`:
+Execute o servidor de mock para simular `/auth/login` e `/users`:
 
 ```bash
 npm run start:mock
