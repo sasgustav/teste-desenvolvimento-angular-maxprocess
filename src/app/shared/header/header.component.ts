@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, MenuItemCommandEvent } from 'primeng/api';
 
 @Component({
   selector: 'app-header',
@@ -14,8 +14,9 @@ export class HeaderComponent {
 
   mobileMenuVisible = false;
 
-  handleItemCommand(item: MenuItem, event: Event): void {
-    item.command?.({ originalEvent: event, item });
+  handleItemCommand(item: MenuItem, originalEvent: Event): void {
+    const event: MenuItemCommandEvent = { originalEvent, item };
+    item.command?.(event);
     this.closeMobileMenu();
   }
 
