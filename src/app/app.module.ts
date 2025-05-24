@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -10,6 +11,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptor } from './services/token.interceptor';
+import { UserService } from './services/user.service';
 
 import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
@@ -25,6 +27,7 @@ import { ButtonModule } from 'primeng/button';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
@@ -36,6 +39,7 @@ import { ButtonModule } from 'primeng/button';
   providers: [
     AuthService,
     AuthGuard,
+    UserService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
