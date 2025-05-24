@@ -18,6 +18,22 @@ body {
   font-family: var(--font-family);
 }
 
+span.p-button-icon.fab.fa-google {
+  color: #385bef;
+}
+
+span.p-button-icon.fab.fa-facebook-f {
+  color: #385bef;
+}
+
+span.p-button-icon.fab.fa-github {
+  color: #385bef;
+}
+
+span.p-button-icon.fab.fa-apple {
+  color: #385bef;
+}
+
 .content-wrapper {
   justify-content: center;
   align-items: center;
