@@ -58,3 +58,4 @@ temp/
 # Others
 *.swp
 .npm/
+!server.js

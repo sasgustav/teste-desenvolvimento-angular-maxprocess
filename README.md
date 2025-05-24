@@ -27,3 +27,29 @@ O fluxo de autenticação envia usuário e senha para a API, grava o token no `l
 - Teste unitário simples para o `AuthGuard`.
 
 Futuramente é possível ampliar os testes, tratar renovação de token e armazenar o JWT de forma mais segura.
+
+## Mock da API
+
+Execute o servidor de mock para simular `/auth/login` e `/usuario`:
+
+```bash
+npm run start:mock
+```
+
+A API ficará disponível em `http://localhost:3000`.
+
+## Testes
+
+- **Unitários:**
+
+```bash
+npm test
+```
+
+- **End to End (Cypress):**
+
+```bash
+npx cypress run
+```
+
+Para visualizar a cobertura utilize `ng test --code-coverage` e abra `coverage/index.html`.

@@ -8,7 +8,8 @@
     "test": "ng test --project jwt-auth-angular",
     "lint": "ng lint --project jwt-auth-angular",
     "format": "prettier --write \"src/**/*.ts\"",
-    "e2e": "ng e2e --project jwt-auth-angular"
+    "e2e": "ng e2e --project jwt-auth-angular",
+    "start:mock": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +39,8 @@
     "@angular-eslint/eslint-plugin": "^16.2.0",
     "@angular-eslint/eslint-plugin-template": "^16.2.0",
     "@angular-eslint/template-parser": "^16.2.0",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "json-server": "^0.17.3",
+    "cypress": "^13.2.0"
   }
 }
