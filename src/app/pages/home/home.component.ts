@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  chartData = {
-    labels: ['Usuário A', 'Usuário B', 'Usuário C'],
-    datasets: [
-      { label: 'Acessos', data: [5, 10, 7] }
-    ]
-  };
+  chartRows = [
+    { label: 'Usuário A', value: 5 },
+    { label: 'Usuário B', value: 10 },
+    { label: 'Usuário C', value: 7 }
+  ];
 }

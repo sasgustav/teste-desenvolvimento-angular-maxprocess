@@ -1,6 +1,6 @@
 # Angular JWT Auth Challenge Improvements
 
-This repository contains a simple Angular application used for the MaxProcess technical test. The original project provided basic authentication, a chart page and a user list. This fork includes some small improvements to showcase better structure and practices.
+This repository contains a simple Angular application used for the MaxProcess technical test. The original project provided basic authentication, a chart page and a user list. This fork includes some small improvements to showcase better structure and practices. Since the environment doesn't include `chart.js`, the dashboard now displays a simple table instead of a bar chart.
 
 ## Setup
 

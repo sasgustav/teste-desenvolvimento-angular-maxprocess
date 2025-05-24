@@ -13,7 +13,6 @@ import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptor } from './services/token.interceptor';
 import { UserService } from './services/user.service';
 
-import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
@@ -31,7 +30,6 @@ import { ButtonModule } from 'primeng/button';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ChartModule,
     TableModule,
     InputTextModule,
     ButtonModule
