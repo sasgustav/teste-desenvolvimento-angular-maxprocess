@@ -46,10 +46,3 @@ span.p-button-icon.fab.fa-github {
 span.p-button-icon.fab.fa-apple {
   color: #385bef;
 }
-
-.content-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
