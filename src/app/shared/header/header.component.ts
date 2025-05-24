@@ -4,7 +4,7 @@ import { MenuItem, MenuItemCommandEvent } from 'primeng/api';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
   @Input() items: MenuItem[] = [];
@@ -12,7 +12,7 @@ export class HeaderComponent {
   @Input() userName = 'Gustavo Vasconcelos';
   @Input() userAvatar = '';
 
-  mobileMenuVisible = false;
+  isMobileMenuOpen = false;
   isMobile = window.innerWidth <= 768;
   isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
 
@@ -30,10 +30,10 @@ export class HeaderComponent {
   }
 
   toggleMobileMenu() {
-    this.mobileMenuVisible = !this.mobileMenuVisible;
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
   closeMobileMenu() {
-    this.mobileMenuVisible = false;
+    this.isMobileMenuOpen = false;
   }
 }
