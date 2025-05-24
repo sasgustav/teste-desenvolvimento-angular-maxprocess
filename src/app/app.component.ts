@@ -15,7 +15,14 @@ export class AppComponent implements OnInit {
 
   private readonly appMenu: MenuItem[] = [
     { label: 'Home', routerLink: '/home', icon: 'pi pi-home' },
-    { label: 'Usuários', routerLink: '/users', icon: 'pi pi-users' },
+    {
+      label: 'Usuários',
+      icon: 'pi pi-users',
+      items: [
+        { label: 'Lista', routerLink: '/users', icon: 'pi pi-list' },
+        { label: 'Novo', routerLink: '/users/new', icon: 'pi pi-user-plus' }
+      ]
+    },
     { label: 'Sair', command: () => this.logout(), icon: 'pi pi-sign-out' }
   ];
 
