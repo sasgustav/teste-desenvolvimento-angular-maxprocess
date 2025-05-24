@@ -13,13 +13,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { TokenInterceptor } from './services/token.interceptor';
 import { UserService } from './services/user.service';
 
-import { TableModule } from 'primeng/table';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
-import { MenubarModule } from 'primeng/menubar';
-import { MessageModule } from 'primeng/message';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,13 +28,7 @@ import { MessageModule } from 'primeng/message';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    TableModule,
-    InputTextModule,
-    PasswordModule,
-    ButtonModule,
-    CardModule,
-    MenubarModule,
-    MessageModule
+    SharedModule
   ],
   providers: [
     AuthService,

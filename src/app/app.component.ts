@@ -10,6 +10,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
   menuItems: MenuItem[] = [];
+  startTemplate = 'MaxProcess';
 
   constructor(private auth: AuthService, private router: Router) {}
 

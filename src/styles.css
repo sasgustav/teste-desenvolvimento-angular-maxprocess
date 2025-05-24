@@ -1,1 +1,9 @@
-/* Add global styles here */
+body {
+  margin: 0;
+  background-color: #f5f6fa;
+  font-family: var(--font-family, Arial, Helvetica, sans-serif);
+}
+
+.content-wrapper {
+  padding: 1rem;
+}
