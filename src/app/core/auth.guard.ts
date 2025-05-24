@@ -3,7 +3,7 @@ import { CanActivate, Router } from '@angular/router';
 import { AuthService } from './auth.service';
 
 interface JwtPayload {
-  exp: number;
+  exp?: number;
 }
 
 @Injectable()
@@ -13,9 +13,12 @@ export class AuthGuard implements CanActivate {
   private tokenExpired(token: string): boolean {
     try {
       const payload = JSON.parse(atob(token.split('.')[1])) as JwtPayload;
+      if (!payload.exp) {
+        return false;
+      }
       return payload.exp * 1000 < Date.now();
     } catch {
-      return true;
+      return false;
     }
   }
 
