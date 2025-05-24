@@ -1,6 +1,6 @@
-<app-header *ngIf="showMenu" [items]="menuItems" [title]="startTemplate"></app-header>
+<app-header [items]="menuItems" [title]="startTemplate"></app-header>
 <main class="content-wrapper">
-  <app-breadcrumbs></app-breadcrumbs>
+  <app-breadcrumbs *ngIf="showBreadcrumbs"></app-breadcrumbs>
   <router-outlet></router-outlet>
 </main>
 <app-footer></app-footer>
