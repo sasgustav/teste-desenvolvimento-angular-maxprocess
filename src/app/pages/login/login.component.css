@@ -69,7 +69,7 @@
   width: 100%;
 }
 
-.login-field .pi {
+.login-field .fa {
   position: absolute;
   top: 50%;
   left: 0.75rem;
@@ -175,19 +175,19 @@
   border-color: var(--primary-color);
 }
 
-.google-icon .pi {
+.google-icon .fa {
   color: #db4437;
 }
 
-.facebook-icon .pi {
+.facebook-icon .fa {
   color: #1877f2;
 }
 
-.github-icon .pi {
+.github-icon .fa {
   color: #000000;
 }
 
-.apple-icon .pi {
+.apple-icon .fa {
   color: #000000;
 }
 
