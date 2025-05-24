@@ -81,8 +81,10 @@ export class UserListComponent implements OnInit, OnDestroy {
       message: `Tem certeza que deseja excluir ${user.name}?`,
       header: 'Confirmar Exclusão',
       icon: 'pi pi-exclamation-triangle',
-      acceptLabel: 'Sim, excluir',
+      acceptLabel: 'Sim',
       rejectLabel: 'Cancelar',
+      acceptIcon: '',
+      rejectIcon: '',
       defaultFocus: 'reject',
       accept: () => this.deleteUser(user),
     });
