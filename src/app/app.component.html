@@ -1,2 +1,8 @@
-<p-menubar [model]="menuItems"></p-menubar>
-<router-outlet></router-outlet>
+<p-menubar [model]="menuItems" class="p-mb-3">
+  <ng-template pTemplate="start">
+    <span class="font-bold">{{ startTemplate }}</span>
+  </ng-template>
+</p-menubar>
+<div class="content-wrapper">
+  <router-outlet></router-outlet>
+</div>

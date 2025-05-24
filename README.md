@@ -47,6 +47,8 @@ Para melhorar a experiência do usuário a aplicação agora utiliza componentes
 - Páginas envolvidas por `Card` oferecendo separação visual e espaçamento.
 - Formulário de login com `Password` e `Message`, além de classes PrimeFlex para melhor alinhamento.
 - Inclusão da folha de estilos do PrimeIcons para exibir ícones.
+- Modelos TypeScript adicionados para tipar os dados consumidos na API.
+- Estilos globais e contêiner centralizado aplicados em todas as páginas.
 
 Essas atualizações modernizam o visual e mantêm o código simples.
 

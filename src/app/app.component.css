@@ -1,1 +1,8 @@
 
+:host ::ng-deep .p-menubar {
+  border-radius: 0;
+}
+
+.font-bold {
+  font-weight: bold;
+}
