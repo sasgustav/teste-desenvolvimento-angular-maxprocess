@@ -1,14 +1,58 @@
-<p-menubar [model]="items" class="app-menubar" aria-label="Menu principal">
-  <ng-template pTemplate="start">
-    <div class="brand">
-      <i class="pi pi-briefcase logo-icon"></i>
-      <span class="title">{{ title }}</span>
-    </div>
-  </ng-template>
-  <ng-template pTemplate="end">
-    <div class="profile">
-      <i class="pi pi-user avatar-icon"></i>
-      <span class="username">{{ userName }}</span>
-    </div>
-  </ng-template>
-</p-menubar>
+<nav class="header-nav" aria-label="Menu principal" role="navigation">
+  <p-menubar [model]="items" class="app-menubar">
+    <ng-template pTemplate="start">
+      <div class="brand" role="img" aria-label="Logo">
+        <i class="pi pi-briefcase logo-icon"></i>
+        <span class="title">{{ title }}</span>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="end">
+      <div class="profile">
+        <i class="pi pi-user avatar-icon"></i>
+        <span class="username">{{ userName }}</span>
+        <button
+          type="button"
+          class="menu-toggle p-link"
+          (click)="toggleMobileMenu()"
+          [attr.aria-expanded]="mobileMenuVisible"
+          aria-label="Abrir menu"
+        >
+          <i class="pi pi-bars"></i>
+        </button>
+      </div>
+    </ng-template>
+  </p-menubar>
+
+  <p-sidebar
+    [(visible)]="mobileMenuVisible"
+    position="left"
+    [baseZIndex]="10000"
+    class="mobile-sidebar"
+    aria-label="Menu móvel"
+  >
+    <ul class="mobile-menu" role="menu">
+      <li *ngFor="let item of items" role="none">
+        <a
+          *ngIf="item.routerLink; else command"
+          [routerLink]="item.routerLink"
+          class="mobile-menu-link"
+          role="menuitem"
+          (click)="closeMobileMenu()"
+        >
+          <i [ngClass]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </a>
+        <ng-template #command>
+          <button
+            class="mobile-menu-link"
+            (click)="item.command && item.command(); closeMobileMenu()"
+            role="menuitem"
+          >
+            <i [ngClass]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </button>
+        </ng-template>
+      </li>
+    </ul>
+  </p-sidebar>
+</nav>

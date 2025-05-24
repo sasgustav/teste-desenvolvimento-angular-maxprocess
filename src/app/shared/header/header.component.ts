@@ -11,4 +11,14 @@ export class HeaderComponent {
   @Input() title = 'MaxProcess';
   @Input() userName = 'Gustavo Vasconcelos';
   @Input() userAvatar = 'assets/avatar.png';
+
+  mobileMenuVisible = false;
+
+  toggleMobileMenu() {
+    this.mobileMenuVisible = !this.mobileMenuVisible;
+  }
+
+  closeMobileMenu() {
+    this.mobileMenuVisible = false;
+  }
 }
