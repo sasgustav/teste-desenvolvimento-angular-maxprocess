@@ -11,22 +11,33 @@ import { AuthService } from './core/auth.service';
 export class AppComponent implements OnInit {
   menuItems: MenuItem[] = [];
   startTemplate = 'MaxProcess';
-  showMenu = true;
+  showBreadcrumbs = true;
+
+  private readonly appMenu: MenuItem[] = [
+    { label: 'Home', routerLink: '/home', icon: 'pi pi-home' },
+    { label: 'Usuários', routerLink: '/users', icon: 'pi pi-users' },
+    { label: 'Sair', command: () => this.logout(), icon: 'pi pi-sign-out' }
+  ];
 
   constructor(private auth: AuthService, private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.showMenu = !event.urlAfterRedirects.includes('/auth/login');
+        const isLogin = event.urlAfterRedirects.includes('/auth/login');
+        this.showBreadcrumbs = !isLogin;
+        if (isLogin) {
+          this.menuItems = [];
+          this.startTemplate =
+            'Aplicação Teste Frontend MaxProcess - Desenvolvido por Gustavo Vasconcelos';
+        } else {
+          this.menuItems = this.appMenu;
+          this.startTemplate = 'MaxProcess';
+        }
       }
     });
   }
 
   ngOnInit(): void {
-    this.menuItems = [
-      { label: 'Home', routerLink: '/home', icon: 'pi pi-home' },
-      { label: 'Usuários', routerLink: '/users', icon: 'pi pi-users' },
-      { label: 'Sair', command: () => this.logout(), icon: 'pi pi-sign-out' }
-    ];
+    this.menuItems = this.appMenu;
   }
 
   logout() {
