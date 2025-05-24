@@ -6,6 +6,8 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
+import { MenuModule } from 'primeng/menu';
+import { SidebarModule } from 'primeng/sidebar';
 import { MessageModule } from 'primeng/message';
 import { ChartModule } from 'primeng/chart';
 import { FooterComponent } from './footer/footer.component';
@@ -28,6 +30,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     ButtonModule,
     CardModule,
     MenubarModule,
+    MenuModule,
+    SidebarModule,
     MessageModule,
     ChartModule,
   ],
@@ -38,6 +42,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     ButtonModule,
     CardModule,
     MenubarModule,
+    MenuModule,
+    SidebarModule,
     MessageModule,
     ChartModule,
     FooterComponent,

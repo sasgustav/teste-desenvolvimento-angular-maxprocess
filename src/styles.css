@@ -1,5 +1,5 @@
 :root {
-  --font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  --font-family: 'Inter', 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
   --primary-gradient-start: #6a11cb;
   --primary-gradient-end: #2575fc;
   --primary-color: #3f51b5;
