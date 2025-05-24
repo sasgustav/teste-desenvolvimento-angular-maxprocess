@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from '../models/user';
 import { environment } from '../../environments/environment';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class UserService {
   /**
    * Endpoint base para as operações de usuário. O servidor de mock

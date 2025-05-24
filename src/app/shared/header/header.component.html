@@ -1,5 +1,5 @@
 <nav class="header-nav" aria-label="Menu principal">
-  <app-nav-menu [items]="items">
+  <app-nav-menu *ngIf="showMenu" [items]="items">
     <div class="brand" role="img" aria-label="Logo">
       <i class="pi pi-briefcase logo-icon"></i>
       <span class="title">{{ title }}</span>
