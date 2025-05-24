@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
 
@@ -7,15 +7,24 @@ import { AuthService } from '../../core/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   username = '';
   password = '';
+  remember = false;
   error = '';
 
   constructor(
     private auth: AuthService,
     private router: Router
   ) {}
+
+  ngOnInit(): void {
+    const saved = localStorage.getItem('rememberedUsername');
+    if (saved) {
+      this.username = saved;
+      this.remember = true;
+    }
+  }
 
   login(): void {
     this.error = '';
@@ -24,7 +33,14 @@ export class LoginComponent {
       return;
     }
     this.auth.login(this.username, this.password).subscribe({
-      next: () => this.router.navigate(['/home']),
+      next: () => {
+        if (this.remember) {
+          localStorage.setItem('rememberedUsername', this.username);
+        } else {
+          localStorage.removeItem('rememberedUsername');
+        }
+        this.router.navigate(['/home']);
+      },
       error: () => this.error = 'Credenciais inválidas'
     });
   }

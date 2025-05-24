@@ -1,61 +1,116 @@
 .login-wrapper {
   min-height: 100vh;
-  background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
   padding: 2rem;
 }
 
 .login-card {
   width: 100%;
-  max-width: 400px;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 420px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.login-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .login-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-size: 1.5rem;
+  background: var(--primary-color);
   color: #fff;
-  background-color: #5c61f4;
-  padding: 1rem;
+  padding: 1.5rem;
+}
+.icon-lock {
+  font-size: 2.5rem;
+  margin-right: 1rem;
 }
 
-.icon-lock {
-  font-size: 2rem;
+.login-title h2 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+.login-title p {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  opacity: 0.85;
 }
 
 .login-form {
-  padding: 2rem 1.5rem;
+  padding: 2rem;
 }
 
-.login-form .p-field label {
-  font-weight: 600;
-  color: #333;
+.login-field {
+  margin-bottom: 1.5rem;
+}
+.login-field .p-input-icon-left {
+  width: 100%;
+}
+.login-field input,
+.login-field .p-password input {
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--input-border);
+  transition: border-color 0.3s;
+}
+.login-field input:focus,
+.login-field .p-password input:focus {
+  border-color: var(--primary-color);
+  background: var(--input-focus-bg);
+  outline: none;
 }
 
-.login-form .p-input-icon-left .pi {
-  color: #5c61f4;
+.login-options {
+  font-size: 0.875rem;
+}
+.p-field-checkbox {
+  display: flex;
+  align-items: center;
+}
+.p-field-checkbox label {
+  margin-left: 0.5rem;
+}
+.forgot-link {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+.forgot-link:hover {
+  text-decoration: underline;
 }
 
 .login-button {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  background: #5c61f4;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
   border: none;
   border-radius: 0.5rem;
-  transition: background 0.3s ease, transform 0.2s ease;
-  color: #fff;
+  padding: 0.75rem;
+  transition: background 0.3s, transform 0.2s;
 }
-
 .login-button:hover {
-  background: #4649c8;
+  background: var(--primary-color-dark);
   transform: translateY(-2px);
 }
 
-.login-button:active {
-  transform: translateY(0);
+.social-login p {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  color: var(--text-color);
+}
+.social-icons .p-button {
+  border-color: var(--input-border);
+}
+.social-icons .p-button:hover {
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    margin: 1rem;
+  }
+  .login-form {
+    padding: 1.5rem;
+  }
 }
