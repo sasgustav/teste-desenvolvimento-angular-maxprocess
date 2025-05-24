@@ -20,6 +20,8 @@
             pInputText
             class="w-full"
             placeholder="Usuário"
+            aria-label="Usuário"
+            autocomplete="username"
           />
         </span>
       </div>
@@ -30,6 +32,8 @@
             inputId="password"
             [(ngModel)]="password"
             placeholder="Senha"
+            aria-label="Senha"
+            autocomplete="current-password"
             [toggleMask]="true"
             [feedback]="false"
             class="w-full"
@@ -47,8 +51,10 @@
       <button
         pButton
         type="button"
-        label="Entrar"
+        [label]="loading ? 'Entrando...' : 'Entrar'"
+        [loading]="loading"
         class="login-button w-full"
+        [disabled]="loading"
         (click)="login()"
       ></button>
       <div class="social-login">
