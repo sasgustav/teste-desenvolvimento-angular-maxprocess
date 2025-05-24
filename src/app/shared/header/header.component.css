@@ -3,55 +3,51 @@
 }
 
 :host ::ng-deep .app-menubar {
-  background: linear-gradient(90deg, var(--primary-color), var(--primary-color-dark));
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  background: #ffffff;
+  color: var(--text-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 :host ::ng-deep .app-menubar .p-menuitem-link {
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
+  color: var(--text-color);
+  padding: 0.75rem 1.25rem;
   font-weight: 500;
-  transition: background 0.2s;
 }
 
 :host ::ng-deep .app-menubar .p-menuitem-link:hover,
 :host ::ng-deep .app-menubar .p-menuitem-link.p-highlight {
-  background: rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
-.brand .logo {
-  height: 2rem;
-  width: auto;
+.logo-icon {
+  font-size: 1.75rem;
+  color: var(--primary-color);
 }
 
-.brand .title {
+.title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #ffffff;
+  color: var(--text-color);
 }
 
 .profile {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
-.profile .username {
-  color: #ffffff;
+.avatar-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color-dark);
+}
+
+.username {
   font-weight: 500;
-}
-
-.profile .avatar {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid rgba(255,255,255,0.3);
+  color: var(--text-color);
 }

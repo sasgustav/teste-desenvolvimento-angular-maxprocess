@@ -1,14 +1,14 @@
 <p-menubar [model]="items" class="app-menubar" aria-label="Menu principal">
   <ng-template pTemplate="start">
     <div class="brand">
-      <img src="assets/logo.png" alt="Logo" class="logo" />
+      <i class="pi pi-briefcase logo-icon"></i>
       <span class="title">{{ title }}</span>
     </div>
   </ng-template>
   <ng-template pTemplate="end">
     <div class="profile">
+      <i class="pi pi-user avatar-icon"></i>
       <span class="username">{{ userName }}</span>
-      <img [src]="userAvatar" alt="Avatar" class="avatar" />
     </div>
   </ng-template>
 </p-menubar>

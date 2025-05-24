@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
         if (isLogin) {
           this.menuItems = [];
           this.startTemplate =
-            'Aplicação Teste Frontend MaxProcess - Desenvolvido por Gustavo Vasconcelos';
+            'Aplicação Teste Frontend MaxProcess';
         } else {
           this.menuItems = this.appMenu;
           this.startTemplate = 'MaxProcess';
