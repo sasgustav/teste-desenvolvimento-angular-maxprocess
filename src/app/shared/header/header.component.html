@@ -16,15 +16,18 @@
         <span class="title">{{ title }}</span>
       </div>
     </ng-template>
-    <ng-template pTemplate="item" let-item>
+    <ng-template pTemplate="menuitem" let-item>
       <a
-        pMenuitem
-        [item]="item"
+        [routerLink]="item.routerLink"
         [pTooltip]="isTablet ? item.label : null"
         tooltipPosition="bottom"
         (click)="handleItemCommand(item, $event)"
         (keydown.enter)="handleItemCommand(item, $event)"
-      ></a>
+        class="p-menuitem-link"
+      >
+        <span class="p-menuitem-icon" [ngClass]="item.icon"></span>
+        <span class="p-menuitem-text">{{ item.label }}</span>
+      </a>
     </ng-template>
     <ng-template pTemplate="end">
       <div class="profile">
