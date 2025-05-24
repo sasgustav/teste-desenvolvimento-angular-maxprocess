@@ -14,6 +14,11 @@ export class HeaderComponent {
 
   mobileMenuVisible = false;
 
+  handleItemCommand(item: MenuItem, event: Event): void {
+    item.command?.({ originalEvent: event, item });
+    this.closeMobileMenu();
+  }
+
   toggleMobileMenu() {
     this.mobileMenuVisible = !this.mobileMenuVisible;
   }
