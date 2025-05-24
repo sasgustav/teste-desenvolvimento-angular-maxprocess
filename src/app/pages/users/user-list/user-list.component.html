@@ -46,7 +46,13 @@
     aria-label="Tabela de usuários"
   >
     <ng-template pTemplate="caption">
-      <p-skeleton *ngIf="loading" height="2rem" class="mb-2" *ngFor="let _ of skeletonRows"></p-skeleton>
+      <ng-container *ngIf="loading">
+        <p-skeleton
+          *ngFor="let _ of skeletonRows"
+          height="2rem"
+          class="mb-2"
+        ></p-skeleton>
+      </ng-container>
     </ng-template>
     <ng-template pTemplate="header">
       <tr>
