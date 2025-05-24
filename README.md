@@ -130,3 +130,4 @@ MIT
 
 - **Desenvolvedor:** Gustavo Vasconcelos  
   [LinkedIn](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)  
+\n## Novas funcionalidades\n- Componentes desacoplados para Login, Header, Dashboard e Listagem de Usuários.

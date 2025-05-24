@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { ChartData } from 'chart.js';
-
-interface Metric {
-  title: string;
-  value: string | number;
-  icon: string;
-  color: string;
-}
+import { Metric } from '../../models/metric';
 
 @Component({
   selector: 'app-home',

@@ -1,0 +1,49 @@
+<p-message *ngIf="error" severity="error" [text]="error" class="error-message"></p-message>
+<div class="login-field">
+  <span class="p-input-icon-left w-full">
+    <i class="fa-solid fa-user"></i>
+    <input
+      id="username"
+      [(ngModel)]="username"
+      pInputText
+      class="w-full"
+      placeholder="Usuário"
+      aria-label="Usuário"
+      autocomplete="username"
+    />
+  </span>
+</div>
+<div class="login-field">
+  <span class="p-input-icon-left w-full">
+    <i class="fa-solid fa-key"></i>
+    <p-password
+      inputId="password"
+      [(ngModel)]="password"
+      placeholder="Senha"
+      aria-label="Senha"
+      autocomplete="current-password"
+      [toggleMask]="true"
+      [feedback]="false"
+      class="w-full"
+      [style]="{ width: '100%' }"
+      [inputStyle]="{ width: '100%' }"
+    ></p-password>
+  </span>
+</div>
+<div class="login-options">
+  <div class="remember-me">
+    <p-checkbox id="remember" [(ngModel)]="remember" binary="true"></p-checkbox>
+    <label for="remember">Lembrar-me</label>
+  </div>
+  <app-forgot-password-link></app-forgot-password-link>
+</div>
+<button
+  pButton
+  type="button"
+  [label]="loading ? 'Entrando...' : 'Entrar'"
+  [loading]="loading"
+  class="login-button w-full"
+  [disabled]="loading"
+  (click)="submit()"
+></button>
+<app-social-login-buttons></app-social-login-buttons>
