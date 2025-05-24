@@ -10,6 +10,9 @@ import { MenuModule } from 'primeng/menu';
 import { SidebarModule } from 'primeng/sidebar';
 import { MessageModule } from 'primeng/message';
 import { ChartModule } from 'primeng/chart';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
+import { SkeletonModule } from 'primeng/skeleton';
 import { FooterComponent } from './footer/footer.component';
 import { MetricCardComponent } from './metric-card/metric-card.component';
 import { HeaderComponent } from './header/header.component';
@@ -34,6 +37,9 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     SidebarModule,
     MessageModule,
     ChartModule,
+    ConfirmDialogModule,
+    ToastModule,
+    SkeletonModule,
   ],
   exports: [
     TableModule,
@@ -46,6 +52,9 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     SidebarModule,
     MessageModule,
     ChartModule,
+    ConfirmDialogModule,
+    ToastModule,
+    SkeletonModule,
     FooterComponent,
     MetricCardComponent,
     HeaderComponent,
