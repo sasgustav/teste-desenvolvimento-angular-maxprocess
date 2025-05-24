@@ -32,7 +32,6 @@
 :host ::ng-deep .app-menubar .p-menuitem-link.p-highlight {
   background: var(--primary-color-dark);
   color: #fff;
-  border-bottom: 2px solid #fff;
 }
 
 .brand {
@@ -83,12 +82,15 @@
   background: var(--primary-color-dark);
 }
 
+.mobile-sidebar {
+  transition: transform 0.3s ease;
+}
+
 .mobile-sidebar ::ng-deep .mobile-panel-menu .p-menuitem-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 1rem;
   font-weight: 500;
   color: var(--text-color);
   text-decoration: none;
@@ -109,5 +111,20 @@
 @media (min-width: 769px) {
   .menu-toggle {
     display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  :host ::ng-deep .p-menuitem-text {
+    display: none;
+  }
+  :host ::ng-deep .app-menubar .p-menuitem-link {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .title {
+    font-size: 1.5rem;
   }
 }
