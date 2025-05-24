@@ -23,12 +23,6 @@ export class AppComponent implements OnInit {
         { label: 'Novo', routerLink: '/users/new', icon: 'pi pi-user-plus' }
       ]
     },
-    {
-      label: 'Sair',
-      command: () => this.logout(),
-      icon: 'pi pi-sign-out',
-      styleClass: 'logout-item'
-    }
   ];
 
   constructor(private auth: AuthService, private router: Router) {
