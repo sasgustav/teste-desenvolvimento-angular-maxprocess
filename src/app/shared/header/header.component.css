@@ -3,6 +3,12 @@
   font-family: var(--font-family);
 }
 
+.header-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 :host ::ng-deep .app-menubar {
   background: var(--primary-color);
   color: #fff;
@@ -18,7 +24,7 @@
   color: #fff;
   padding: 0.75rem 1rem;
   font-weight: 500;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 :host ::ng-deep .app-menubar .p-menuitem-link:hover,
@@ -26,6 +32,7 @@
 :host ::ng-deep .app-menubar .p-menuitem-link.p-highlight {
   background: var(--primary-color-dark);
   color: #fff;
+  border-bottom: 2px solid #fff;
 }
 
 .brand {
@@ -47,6 +54,13 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.avatar-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .username {
