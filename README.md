@@ -1,75 +1,131 @@
-# Angular JWT Example
+# Teste FrontEnd Angular com JWT
 
-Este projeto demonstra uma aplicação Angular 16 com autenticação via JWT e organização modular. As rotas de `home` e `users` são protegidas por um `AuthGuard` e os módulos são carregados sob demanda (lazy loading).
+Este projeto demonstra uma aplicação Angular focada em autenticação com JSON Web Token (JWT). O objetivo é disponibilizar:
 
-Desenvolvido por **Gustavo Vasconcelos**.
+- Tela de login com geração de token.
+- Dashboard com gráfico utilizando PrimeNG.
+- Listagem de usuários protegida por `AuthGuard`.
 
-## Como executar
+## Pré-requisitos
+
+- **Node.js** versão 18 ou superior.
+- **NPM** (ou Yarn) para gerenciamento de pacotes.
+- **Angular CLI** instalado globalmente ou via `npx`.
+- API local simulada via `json-server`.
+
+## Instalação
 
 ```bash
+git clone <url>
+cd <projeto>
 npm install
+```
+
+## Execução em Desenvolvimento
+
+```bash
 npm start
 ```
 
-A aplicação estará disponível em `http://localhost:4200`.
+A aplicação abre em `http://localhost:4200`.
 
-## Estrutura e Arquitetura
+## Ambientes e Configurações
 
-- **core**: serviços, interceptors e guardas utilizados em toda a aplicação.
-- **modules**: `auth`, `home` e `users`, cada um com seu roteamento próprio.
-- **shared**: módulo com componentes do PrimeNG utilizados em várias partes.
+Os arquivos `src/environments/environment.ts` e `environment.prod.ts` armazenam URLs da API e outras variáveis. Edite `apiBase` conforme necessário para apontar para sua API.
 
-O fluxo de autenticação envia usuário e senha para a API, grava o token no `localStorage` e usa o `TokenInterceptor` para anexá-lo às requisições. O `AuthGuard` verifica se o token existe e se não está expirado antes de permitir o acesso às rotas.
-
-## Melhorias e Evoluções
-
-- Navegação protegida com lazy loading dos módulos.
-- Tela inicial exibindo gráfico do PrimeNG.
-- Listagem de usuários consumindo a API.
-- Teste unitário simples para o `AuthGuard`.
-
-Futuramente é possível ampliar os testes, tratar renovação de token e armazenar o JWT de forma mais segura.
-
-## Mock da API
-
-Execute o servidor de mock para simular `/auth/login` e `/users`:
+## Build para Produção
 
 ```bash
-npm run start:mock
+npm run build
 ```
 
-A API ficará disponível em `http://localhost:3000`.
+Os arquivos serão gerados em `dist/jwt-auth-angular`. É possível hospedar em serviços como Firebase Hosting ou Netlify.
 
-## Login de Demonstração
-
-Para entrar na aplicação utilize o usuário de demonstração abaixo:
-
-- **Email:** `demo-gustavo@gmail.com`
-- **Senha:** `123456`
-
-Abra `http://localhost:4200/auth/login` após executar `npm start` e informe essas credenciais.
-
-## Testes
-
-- **Unitários:**
+## Testes Unitários
 
 ```bash
 npm test
 ```
 
-- **End to End (Cypress):**
+O relatório de cobertura fica em `coverage/`. Recomenda-se cobertura mínima de 80%.
+
+## Testes E2E
+
+Os testes end-to-end utilizam Cypress.
 
 ```bash
-npx cypress run
+npm run e2e
 ```
 
-Para visualizar a cobertura utilize `ng test --code-coverage` e abra `coverage/index.html`.
-
-Para executar todos os testes do projeto:
+## Lint e Formatação
 
 ```bash
-npm test              # testes unitários
-npx cypress run       # testes e2e
+npm run lint
+npm run format
 ```
 
-Certifique-se de que o servidor mock esteja em execução quando os testes precisarem consumir a API.
+Utilizamos ESLint integrado ao Angular e Prettier para padronizar o código.
+
+## Estrutura do Projeto
+
+```
+src/
+  app/
+    core/           # serviços de autenticação, interceptors e guards
+    shared/         # componentes reutilizáveis (header, footer, breadcrumbs)
+    modules/
+      auth/
+      home/
+      users/
+  assets/
+  environments/
+```
+
+- **auth** – módulo de autenticação e rota de login.
+- **home** – dashboard com gráfico.
+- **users** – listagem de usuários.
+
+## Fluxo de Autenticação
+
+`AuthService` realiza o login e armazena o token JWT no `localStorage`. `TokenInterceptor` anexa o token às requisições e o `AuthGuard` bloqueia rotas não autenticadas.
+
+## Componentes Principais
+
+- **Login** – formulário de autenticação.
+- **Dashboard** – gráfico PrimeNG.
+- **Listagem de Usuários** – tabela protegida.
+- **Header**, **Footer** e **Breadcrumbs** para navegação.
+
+## Melhorias e Boas Práticas
+
+- Lazy loading de módulos.
+- `ChangeDetectionStrategy.OnPush` nos componentes de apresentação.
+- UI construída com PrimeNG e PrimeFlex.
+
+## Mock de Dados
+
+Inicie o servidor de mock para disponibilizar `/auth/login` e `/users`:
+
+```bash
+json-server --watch db.json --port 3000
+```
+
+Ou simplesmente execute:
+
+```bash
+npm run start:mock
+```
+
+## Contribuindo
+
+1. Abra uma issue descrevendo a melhoria ou correção.
+2. Crie uma branch `feature/<nome>` ou `bugfix/<nome>`.
+3. Envie um Pull Request para revisão.
+
+## Licença
+
+MIT
+
+## Contatos
+
+Em caso de dúvidas, envie um email para gustavo@example.com.
