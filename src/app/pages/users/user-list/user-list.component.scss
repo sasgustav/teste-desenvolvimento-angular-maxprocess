@@ -61,6 +61,52 @@
   object-fit: cover;
 }
 
+:host ::ng-deep .custom-confirm .p-confirm-dialog {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+:host ::ng-deep .custom-confirm .p-confirm-dialog-header {
+  background: var(--danger-color, #e53935);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+}
+
+:host ::ng-deep .custom-confirm .p-confirm-dialog-icon {
+  font-size: 2rem;
+}
+
+:host ::ng-deep .custom-confirm .p-confirm-dialog-message {
+  padding: 1.5rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+:host ::ng-deep .custom-confirm .p-confirm-dialog-footer {
+  background: var(--card-bg);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+}
+
+:host ::ng-deep .custom-confirm .p-button-danger {
+  background: var(--danger-color, #e53935);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+}
+
+:host ::ng-deep .custom-confirm .p-button-secondary {
+  background: var(--secondary-color, #757575);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+}
+
 @media (max-width: 768px) {
   .filters {
     flex-direction: column;

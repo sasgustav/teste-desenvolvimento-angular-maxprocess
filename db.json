@@ -1,6 +1,24 @@
 {
   "users": [
-    { "id": 1, "name": "Alice", "email": "alice@example.com" },
-    { "id": 2, "name": "Bob", "email": "bob@example.com" }
+    { "id": 1,  "name": "Alice Silva",      "email": "alice.silva@example.com" },
+    { "id": 2,  "name": "Bob Santos",       "email": "bob.santos@example.com" },
+    { "id": 3,  "name": "Carla Oliveira",   "email": "carla.oliveira@example.com" },
+    { "id": 4,  "name": "Daniel Costa",     "email": "daniel.costa@example.com" },
+    { "id": 5,  "name": "Eduarda Souza",    "email": "eduarda.souza@example.com" },
+    { "id": 6,  "name": "Felipe Pereira",   "email": "felipe.pereira@example.com" },
+    { "id": 7,  "name": "Gabriela Rocha",   "email": "gabriela.rocha@example.com" },
+    { "id": 8,  "name": "Henrique Lima",    "email": "henrique.lima@example.com" },
+    { "id": 9,  "name": "Isabela Alves",    "email": "isabela.alves@example.com" },
+    { "id": 10, "name": "João Fernandes",   "email": "joao.fernandes@example.com" },
+    { "id": 11, "name": "Karina Martins",   "email": "karina.martins@example.com" },
+    { "id": 12, "name": "Leandro Barros",   "email": "leandro.barros@example.com" },
+    { "id": 13, "name": "Mariana Ribeiro",  "email": "mariana.ribeiro@example.com" },
+    { "id": 14, "name": "Nicolas Duarte",   "email": "nicolas.duarte@example.com" },
+    { "id": 15, "name": "Olivia Fernandes", "email": "olivia.fernandes@example.com" },
+    { "id": 16, "name": "Paulo Gonçalves",  "email": "paulo.goncalves@example.com" },
+    { "id": 17, "name": "Quênia Santos",    "email": "quenia.santos@example.com" },
+    { "id": 18, "name": "Ricardo Moreira",  "email": "ricardo.moreira@example.com" },
+    { "id": 19, "name": "Sofia Castro",     "email": "sofia.castro@example.com" },
+    { "id": 20, "name": "Thiago Nunes",     "email": "thiago.nunes@example.com" }
   ]
 }

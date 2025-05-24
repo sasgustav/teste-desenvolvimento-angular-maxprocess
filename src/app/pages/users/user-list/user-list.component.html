@@ -9,6 +9,7 @@
         [(ngModel)]="filterName"
         (input)="applyFilters()"
         aria-label="Buscar por nome"
+        class="w-full"
       />
     </span>
     <span class="p-input-icon-left">
@@ -20,6 +21,7 @@
         [(ngModel)]="filterEmail"
         (input)="applyFilters()"
         aria-label="Buscar por e-mail"
+        class="w-full"
       />
     </span>
     <button
@@ -68,7 +70,7 @@
       <tr>
         <td>{{ user.id }}</td>
         <td>
-          <img [src]="user.avatarUrl" class="avatar" alt="" />
+          <img [src]="user.avatarUrl" class="avatar" alt="{{ user.name }}" />
         </td>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
