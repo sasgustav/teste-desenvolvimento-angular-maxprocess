@@ -1,15 +1,16 @@
-<div class="login-container">
-  <h2>Login</h2>
-  <p *ngIf="error" class="p-error">{{error}}</p>
-  <div class="p-fluid">
-    <div class="p-field">
-      <label for="username">Login</label>
-      <input id="username" [(ngModel)]="username" pInputText />
+<div class="login-wrapper p-d-flex p-jc-center p-ai-center">
+  <p-card header="Login" class="login-card">
+    <div class="p-fluid">
+      <p-message *ngIf="error" severity="error" [text]="error" class="p-mb-3"></p-message>
+      <div class="p-field">
+        <label for="username">Usuário</label>
+        <input id="username" [(ngModel)]="username" pInputText placeholder="Digite seu login" />
+      </div>
+      <div class="p-field">
+        <label for="password">Senha</label>
+        <input id="password" type="password" [(ngModel)]="password" pPassword toggleMask="true" />
+      </div>
+      <button (click)="login()" pButton type="button" label="Entrar" class="p-mt-2 w-full"></button>
     </div>
-    <div class="p-field">
-      <label for="password">Senha</label>
-      <input id="password" type="password" [(ngModel)]="password" pInputText />
-    </div>
-    <button (click)="login()" pButton type="button" label="Entrar"></button>
-  </div>
+  </p-card>
 </div>
