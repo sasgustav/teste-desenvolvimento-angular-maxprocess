@@ -1,9 +1,11 @@
-<p-menubar [model]="menuItems" class="p-mb-3">
-  <ng-template pTemplate="start">
-    <span class="font-bold">{{ startTemplate }}</span>
-  </ng-template>
-</p-menubar>
-<div class="content-wrapper">
+<header *ngIf="showMenu">
+  <p-menubar [model]="menuItems" class="p-mb-3" aria-label="Menu principal">
+    <ng-template pTemplate="start">
+      <span class="font-bold">{{ startTemplate }}</span>
+    </ng-template>
+  </p-menubar>
+</header>
+<main class="content-wrapper">
   <router-outlet></router-outlet>
-</div>
+</main>
 <app-footer></app-footer>
