@@ -28,10 +28,6 @@ coverage/
 Thumbs.db
 desktop.ini
 
-# Environment files (caso não queira versionar variáveis sensíveis)
-src/environments/environment.ts
-src/environments/environment.prod.ts
-
 # Logs
 logs/
 *.log
