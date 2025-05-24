@@ -128,4 +128,5 @@ MIT
 
 ## Contatos
 
-Em caso de dúvidas, envie um email para gustavo@example.com.
+- **Desenvolvedor:** Gustavo Vasconcelos  
+  [LinkedIn](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)  
