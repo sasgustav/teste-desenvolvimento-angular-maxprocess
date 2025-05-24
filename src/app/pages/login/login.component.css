@@ -175,19 +175,19 @@
   border-color: var(--primary-color);
 }
 
-.google-icon .fa {
+.google-icon .p-button-icon {
   color: #db4437;
 }
 
-.facebook-icon .fa {
+.facebook-icon .p-button-icon {
   color: #1877f2;
 }
 
-.github-icon .fa {
+.github-icon .p-button-icon {
   color: #000000;
 }
 
-.apple-icon .fa {
+.apple-icon .p-button-icon {
   color: #000000;
 }
 
