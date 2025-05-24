@@ -1,6 +1,7 @@
 {
   "name": "jwt-auth-angular",
   "version": "0.0.1",
+  "author": "Gustavo Vasconcelos",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --project jwt-auth-angular -o",

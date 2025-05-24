@@ -2,6 +2,8 @@
 
 Este projeto demonstra uma aplicação Angular 16 com autenticação via JWT e organização modular. As rotas de `home` e `users` são protegidas por um `AuthGuard` e os módulos são carregados sob demanda (lazy loading).
 
+Desenvolvido por **Gustavo Vasconcelos**.
+
 ## Como executar
 
 ```bash
@@ -38,6 +40,15 @@ npm run start:mock
 
 A API ficará disponível em `http://localhost:3000`.
 
+## Login de Demonstração
+
+Para entrar na aplicação utilize o usuário de demonstração abaixo:
+
+- **Email:** `demo-gustavo@gmail.com`
+- **Senha:** `123456`
+
+Abra `http://localhost:4200/auth/login` após executar `npm start` e informe essas credenciais.
+
 ## Testes
 
 - **Unitários:**
@@ -53,3 +64,12 @@ npx cypress run
 ```
 
 Para visualizar a cobertura utilize `ng test --code-coverage` e abra `coverage/index.html`.
+
+Para executar todos os testes do projeto:
+
+```bash
+npm test              # testes unitários
+npx cypress run       # testes e2e
+```
+
+Certifique-se de que o servidor mock esteja em execução quando os testes precisarem consumir a API.
