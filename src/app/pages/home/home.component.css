@@ -1,4 +1,5 @@
 
 .home-container {
-  margin: 2rem;
+  display: flex;
+  justify-content: center;
 }

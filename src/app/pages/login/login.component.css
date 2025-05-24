@@ -1,8 +1,9 @@
 
-.login-container {
+.login-wrapper {
+  min-height: calc(100vh - 4rem);
+}
+
+.login-card {
+  width: 100%;
   max-width: 400px;
-  margin: 4rem auto;
-  padding: 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 10px;
 }
