@@ -10,7 +10,7 @@ import { AuthService } from './core/auth.service';
 })
 export class AppComponent implements OnInit {
   menuItems: MenuItem[] = [];
-  startTemplate = 'MaxProcess';
+  startTemplate = 'MaxProcess - Gustavo Vasconcelos';
   showBreadcrumbs = true;
 
   private readonly appMenu: MenuItem[] = [
