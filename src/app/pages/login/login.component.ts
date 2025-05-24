@@ -12,9 +12,17 @@ export class LoginComponent {
   password = '';
   error = '';
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) {}
 
-  login() {
+  login(): void {
+    this.error = '';
+    if (!this.username.trim() || !this.password.trim()) {
+      this.error = 'Informe usuário e senha';
+      return;
+    }
     this.auth.login(this.username, this.password).subscribe({
       next: () => this.router.navigate(['/home']),
       error: () => this.error = 'Credenciais inválidas'

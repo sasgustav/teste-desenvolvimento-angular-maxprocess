@@ -1,7 +1,21 @@
+:root {
+  --font-family: Arial, Helvetica, sans-serif;
+  --primary-gradient-start: #4e54c8;
+  --primary-gradient-end: #8f94fb;
+  --primary-color: #5c61f4;
+  --primary-color-dark: #4649c8;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --border-radius: 1rem;
+  --input-bg: #f5f5f5;
+  --input-border: #cccccc;
+  --input-focus-bg: #ffffff;
+}
+
 body {
   margin: 0;
   background-color: #f5f6fa;
-  font-family: var(--font-family, Arial, Helvetica, sans-serif);
+  font-family: var(--font-family);
 }
 
 .content-wrapper {

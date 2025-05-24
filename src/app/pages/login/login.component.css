@@ -1,9 +1,61 @@
-
 .login-wrapper {
-  min-height: calc(100vh - 4rem);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+  padding: 2rem;
 }
 
 .login-card {
   width: 100%;
   max-width: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #5c61f4;
+  padding: 1rem;
+}
+
+.icon-lock {
+  font-size: 2rem;
+}
+
+.login-form {
+  padding: 2rem 1.5rem;
+}
+
+.login-form .p-field label {
+  font-weight: 600;
+  color: #333;
+}
+
+.login-form .p-input-icon-left .pi {
+  color: #5c61f4;
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  background: #5c61f4;
+  border: none;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+  color: #fff;
+}
+
+.login-button:hover {
+  background: #4649c8;
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  transform: translateY(0);
 }
