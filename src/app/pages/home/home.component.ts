@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChartRow } from '../../models/chart-row';
+import { ChartData } from 'chart.js';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +7,14 @@ import { ChartRow } from '../../models/chart-row';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  chartRows: ChartRow[] = [
-    { label: 'Usuário A', value: 5 },
-    { label: 'Usuário B', value: 10 },
-    { label: 'Usuário C', value: 7 }
-  ];
+  chartData: ChartData<'bar'> = {
+    labels: ['Usuário A', 'Usuário B', 'Usuário C'],
+    datasets: [
+      {
+        label: 'Acessos',
+        data: [5, 10, 7],
+        backgroundColor: ['#42A5F5', '#66BB6A', '#FFA726']
+      }
+    ]
+  };
 }

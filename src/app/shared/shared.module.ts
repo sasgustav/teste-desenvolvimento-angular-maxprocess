@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
 import { MessageModule } from 'primeng/message';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { MessageModule } from 'primeng/message';
     ButtonModule,
     CardModule,
     MenubarModule,
-    MessageModule
+    MessageModule,
+    ChartModule
   ],
   exports: [
     TableModule,
@@ -26,7 +28,8 @@ import { MessageModule } from 'primeng/message';
     ButtonModule,
     CardModule,
     MenubarModule,
-    MessageModule
+    MessageModule,
+    ChartModule
   ]
 })
 export class SharedModule {}

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from './auth.service';
 
 interface JwtPayload {
   exp: number;
@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
   canActivate(): boolean {
     const token = this.auth.getToken();
     if (!token || this.tokenExpired(token)) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/auth/login']);
       return false;
     }
     return true;

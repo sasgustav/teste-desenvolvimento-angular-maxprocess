@@ -18,7 +18,7 @@ export class TokenInterceptor implements HttpInterceptor {
       catchError(err => {
         if (err.status === 401) {
           this.auth.logout();
-          this.router.navigate(['/']);
+          this.router.navigate(['/auth/login']);
         }
         return throwError(() => err);
       })
