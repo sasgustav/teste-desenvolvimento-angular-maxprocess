@@ -1,4 +1,4 @@
-<div class="login-wrapper p-d-flex p-jc-center p-ai-center">
+<div class="login-wrapper">
   <p-card class="login-card">
     <ng-template pTemplate="header">
       <div class="login-header">
@@ -9,10 +9,17 @@
         </div>
       </div>
     </ng-template>
-    <div class="p-fluid login-form">
-      <p-message *ngIf="error" severity="error" [text]="error" class="p-mb-4"></p-message>
-      <div class="p-field login-field">
-        <span class="p-input-icon-left w-full">
+
+    <div class="login-form">
+      <p-message
+        *ngIf="error"
+        severity="error"
+        [text]="error"
+        class="error-message"
+      ></p-message>
+
+      <div class="login-field">
+        <span class="p-input-icon-left">
           <i class="pi pi-user"></i>
           <input
             id="username"
@@ -22,8 +29,9 @@
           />
         </span>
       </div>
-      <div class="p-field login-field">
-        <span class="p-input-icon-left w-full">
+
+      <div class="login-field">
+        <span class="p-input-icon-left">
           <i class="pi pi-key"></i>
           <p-password
             inputId="password"
@@ -35,25 +43,30 @@
           ></p-password>
         </span>
       </div>
-      <div class="login-options p-d-flex p-jc-between p-ai-center p-mb-4">
-        <div class="p-field-checkbox">
-          <p-checkbox [(ngModel)]="remember" binary="true"></p-checkbox>
+
+      <div class="login-options">
+        <div class="remember-me">
+          <p-checkbox id="remember" [(ngModel)]="remember" binary="true"></p-checkbox>
           <label for="remember">Lembrar-me</label>
         </div>
-        <a class="forgot-link" routerLink="/auth/forgot-password">Esqueceu a senha?</a>
+        <a class="forgot-link" routerLink="/auth/forgot-password">
+          Esqueceu a senha?
+        </a>
       </div>
+
       <button
         pButton
         type="button"
         label="Entrar"
-        class="login-button w-full p-mb-4"
+        class="login-button"
         (click)="login()"
       ></button>
-      <div class="social-login p-text-center">
+
+      <div class="social-login">
         <p>Ou continue com</p>
-        <div class="p-d-flex p-ai-center p-jc-center social-icons">
-          <button pButton type="button" icon="pi pi-google" class="p-button-rounded p-button-outlined p-mx-2"></button>
-          <button pButton type="button" icon="pi pi-facebook" class="p-button-rounded p-button-outlined p-mx-2"></button>
+        <div class="social-icons">
+          <button pButton type="button" icon="pi pi-google" class="p-button-rounded outlined"></button>
+          <button pButton type="button" icon="pi pi-facebook" class="p-button-rounded outlined"></button>
         </div>
       </div>
     </div>
