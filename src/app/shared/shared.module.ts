@@ -8,8 +8,10 @@ import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
 import { MessageModule } from 'primeng/message';
 import { ChartModule } from 'primeng/chart';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
+  declarations: [FooterComponent],
   imports: [
     CommonModule,
     TableModule,
@@ -29,7 +31,8 @@ import { ChartModule } from 'primeng/chart';
     CardModule,
     MenubarModule,
     MessageModule,
-    ChartModule
+    ChartModule,
+    FooterComponent
   ]
 })
 export class SharedModule {}
