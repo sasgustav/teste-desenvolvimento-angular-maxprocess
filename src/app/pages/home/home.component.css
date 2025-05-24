@@ -1,5 +1,18 @@
 
-.home-container {
+.home-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.chart-card {
+  width: 100%;
 }

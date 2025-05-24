@@ -9,9 +9,10 @@ import { MenubarModule } from 'primeng/menubar';
 import { MessageModule } from 'primeng/message';
 import { ChartModule } from 'primeng/chart';
 import { FooterComponent } from './footer/footer.component';
+import { MetricCardComponent } from './metric-card/metric-card.component';
 
 @NgModule({
-  declarations: [FooterComponent],
+  declarations: [FooterComponent, MetricCardComponent],
   imports: [
     CommonModule,
     TableModule,
@@ -21,7 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     CardModule,
     MenubarModule,
     MessageModule,
-    ChartModule
+    ChartModule,
   ],
   exports: [
     TableModule,
@@ -32,7 +33,8 @@ import { FooterComponent } from './footer/footer.component';
     MenubarModule,
     MessageModule,
     ChartModule,
-    FooterComponent
-  ]
+    FooterComponent,
+    MetricCardComponent,
+  ],
 })
 export class SharedModule {}
