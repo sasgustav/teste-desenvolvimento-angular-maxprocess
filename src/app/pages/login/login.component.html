@@ -1,0 +1,15 @@
+
+<div class="login-container">
+  <h2>Login</h2>
+  <div class="p-fluid">
+    <div class="p-field">
+      <label for="username">Login</label>
+      <input id="username" [(ngModel)]="username" pInputText />
+    </div>
+    <div class="p-field">
+      <label for="password">Senha</label>
+      <input id="password" type="password" [(ngModel)]="password" pInputText />
+    </div>
+    <button (click)="login()" pButton type="button" label="Entrar"></button>
+  </div>
+</div>
