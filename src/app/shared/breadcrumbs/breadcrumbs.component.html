@@ -1,8 +1,17 @@
 <nav class="breadcrumbs" *ngIf="breadcrumbs.length">
-  <ul>
-    <li *ngFor="let bc of breadcrumbs; let last = last">
-      <a *ngIf="!last" [routerLink]="bc.url">{{ bc.label }}</a>
-      <span *ngIf="last">{{ bc.label }}</span>
+  <ul class="breadcrumbs-list">
+    <li *ngFor="let bc of breadcrumbs; let i = index; let last = last" class="breadcrumb-item">
+      <ng-container *ngIf="i === 0">
+        <a [routerLink]="bc.url" class="breadcrumb-link">
+          <i class="pi pi-home breadcrumb-icon"></i>
+          <span class="breadcrumb-text">{{ bc.label }}</span>
+        </a>
+      </ng-container>
+      <ng-container *ngIf="i > 0">
+        <i class="pi pi-chevron-right separator"></i>
+        <a *ngIf="!last" [routerLink]="bc.url" class="breadcrumb-link">{{ bc.label }}</a>
+        <span *ngIf="last" class="breadcrumb-current">{{ bc.label }}</span>
+      </ng-container>
     </li>
   </ul>
 </nav>

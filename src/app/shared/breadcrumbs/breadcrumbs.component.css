@@ -1,22 +1,70 @@
-.breadcrumbs ul {
+.breadcrumbs {
+  background: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs-list {
   list-style: none;
-  padding: 0;
-  margin: 0 0 1rem;
   display: flex;
+  align-items: center;
   gap: 0.5rem;
-  font-size: 0.875rem;
+  margin: 0;
+  padding: 0;
 }
 
-.breadcrumbs li::after {
-  content: '/';
-  margin-left: 0.5rem;
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.breadcrumbs li:last-child::after {
-  content: '';
-}
-
-.breadcrumbs a {
-  text-decoration: none;
+.breadcrumb-icon {
+  font-size: 1rem;
   color: var(--primary-color);
+}
+
+.separator {
+  font-size: 0.75rem;
+  color: var(--text-color);
+}
+
+.breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.breadcrumb-link:hover {
+  color: var(--primary-color-dark);
+}
+
+.breadcrumb-text {
+  font-weight: 500;
+}
+
+.breadcrumb-current {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  .breadcrumbs {
+    padding: 0.5rem;
+  }
+  .breadcrumb-link,
+  .breadcrumb-current {
+    font-size: 0.75rem;
+  }
+  .breadcrumb-icon,
+  .separator {
+    font-size: 0.75rem;
+  }
 }
