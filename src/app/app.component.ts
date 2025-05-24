@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { AuthService } from './core/auth.service';
 
@@ -11,8 +11,15 @@ import { AuthService } from './core/auth.service';
 export class AppComponent implements OnInit {
   menuItems: MenuItem[] = [];
   startTemplate = 'MaxProcess';
+  showMenu = true;
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(private auth: AuthService, private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.showMenu = !event.urlAfterRedirects.includes('/auth/login');
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.menuItems = [

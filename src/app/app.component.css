@@ -6,3 +6,13 @@
 .font-bold {
   font-weight: bold;
 }
+
+header {
+  display: block;
+}
+
+.content-wrapper {
+  padding: 1rem;
+  min-height: calc(100vh - 4rem);
+  display: block;
+}
