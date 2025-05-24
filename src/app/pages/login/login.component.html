@@ -10,7 +10,12 @@
       </div>
     </ng-template>
     <div class="login-form">
-      <p-message *ngIf="error" severity="error" [text]="error" class="error-message"></p-message>
+      <p-message
+        *ngIf="error"
+        severity="error"
+        [text]="error"
+        class="error-message"
+      ></p-message>
       <div class="login-field">
         <span class="p-input-icon-left w-full">
           <i class="fa-solid fa-user"></i>
@@ -37,16 +42,23 @@
             [toggleMask]="true"
             [feedback]="false"
             class="w-full"
-            inputStyleClass="w-full"
+            [style]="{ width: '100%' }"
+            [inputStyle]="{ width: '100%' }"
           ></p-password>
         </span>
       </div>
       <div class="login-options">
         <div class="remember-me">
-          <p-checkbox id="remember" [(ngModel)]="remember" binary="true"></p-checkbox>
+          <p-checkbox
+            id="remember"
+            [(ngModel)]="remember"
+            binary="true"
+          ></p-checkbox>
           <label for="remember">Lembrar-me</label>
         </div>
-        <a class="forgot-link" routerLink="/auth/forgot-password">Esqueceu a senha?</a>
+        <a class="forgot-link" routerLink="/auth/forgot-password"
+          >Esqueceu a senha?</a
+        >
       </div>
       <button
         pButton
