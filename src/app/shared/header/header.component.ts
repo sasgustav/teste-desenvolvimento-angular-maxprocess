@@ -9,4 +9,6 @@ import { MenuItem } from 'primeng/api';
 export class HeaderComponent {
   @Input() items: MenuItem[] = [];
   @Input() title = 'MaxProcess';
+  @Input() userName = 'Gustavo Vasconcelos';
+  @Input() userAvatar = 'assets/avatar.png';
 }
