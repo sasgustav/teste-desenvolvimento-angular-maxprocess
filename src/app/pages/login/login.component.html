@@ -2,7 +2,7 @@
   <p-card class="login-card">
     <ng-template pTemplate="header">
       <div class="login-header">
-        <i class="pi pi-lock icon-lock"></i>
+        <i class="fa-solid fa-lock icon-lock"></i>
         <div class="login-title">
           <h2>Bem-vindo de volta</h2>
           <p>Faça login na sua conta</p>
@@ -13,7 +13,7 @@
       <p-message *ngIf="error" severity="error" [text]="error" class="error-message"></p-message>
       <div class="login-field">
         <span class="p-input-icon-left w-full">
-          <i class="pi pi-user"></i>
+          <i class="fa-solid fa-user"></i>
           <input
             id="username"
             [(ngModel)]="username"
@@ -27,7 +27,7 @@
       </div>
       <div class="login-field">
         <span class="p-input-icon-left w-full">
-          <i class="pi pi-key"></i>
+          <i class="fa-solid fa-key"></i>
           <p-password
             inputId="password"
             [(ngModel)]="password"
@@ -63,28 +63,28 @@
           <button
             pButton
             type="button"
-            icon="pi pi-google"
+            icon="fab fa-google"
             class="p-button-rounded outlined google-icon"
             aria-label="Google"
           ></button>
           <button
             pButton
             type="button"
-            icon="pi pi-facebook"
+            icon="fab fa-facebook-f"
             class="p-button-rounded outlined facebook-icon"
             aria-label="Facebook"
           ></button>
           <button
             pButton
             type="button"
-            icon="pi pi-github"
+            icon="fab fa-github"
             class="p-button-rounded outlined github-icon"
             aria-label="GitHub"
           ></button>
           <button
             pButton
             type="button"
-            icon="pi pi-apple"
+            icon="fab fa-apple"
             class="p-button-rounded outlined apple-icon"
             aria-label="Apple"
           ></button>
