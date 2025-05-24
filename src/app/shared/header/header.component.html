@@ -43,10 +43,15 @@
         <ng-template #defaultAvatar>
           <i class="pi pi-user avatar-icon"></i>
         </ng-template>
-        <span class="username">{{ userName }}</span>
       </div>
     </ng-template>
   </p-menubar>
+
+  <div class="user-info">
+    <span class="username">{{ userName }}</span>
+    <br />
+    <small class="email">{{ userEmail }}</small>
+  </div>
 
   <p-sidebar
     [(visible)]="isMobileMenuOpen"

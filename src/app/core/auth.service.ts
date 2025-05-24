@@ -15,13 +15,22 @@ export class AuthService {
    * O endpoint configurado no server mock espera /auth/login.
    */
   login(username: string, password: string) {
-    return this.http.post<{ token: string }>(`${this.api}/login`, { username, password }).pipe(
-      tap(res => localStorage.setItem('token', res.token))
-    );
+    return this.http
+      .post<{ token: string }>(`${this.api}/login`, { username, password })
+      .pipe(
+        tap(res => {
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('userEmail', username);
+          const name = username.split('@')[0];
+          localStorage.setItem('userName', name);
+        })
+      );
   }
 
   logout(): void {
     localStorage.removeItem('token');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('userEmail');
   }
 
   isAuthenticated(): boolean {
@@ -30,5 +39,13 @@ export class AuthService {
 
   getToken(): string | null {
     return localStorage.getItem('token');
+  }
+
+  getUserName(): string | null {
+    return localStorage.getItem('userName');
+  }
+
+  getUserEmail(): string | null {
+    return localStorage.getItem('userEmail');
   }
 }

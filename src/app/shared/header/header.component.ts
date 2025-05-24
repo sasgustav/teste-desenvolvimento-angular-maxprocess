@@ -1,4 +1,5 @@
-import { Component, Input, HostListener } from '@angular/core';
+import { Component, Input, HostListener, OnInit } from '@angular/core';
+import { AuthService } from '../../core/auth.service';
 import { MenuItem, MenuItemCommandEvent } from 'primeng/api';
 
 @Component({
@@ -6,11 +7,20 @@ import { MenuItem, MenuItemCommandEvent } from 'primeng/api';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   @Input() items: MenuItem[] = [];
   @Input() title = 'MaxProcess';
-  @Input() userName = 'Gustavo Vasconcelos';
   @Input() userAvatar = '';
+
+  userName = '';
+  userEmail = '';
+
+  constructor(private auth: AuthService) {}
+
+  ngOnInit(): void {
+    this.userName = this.auth.getUserName() || '';
+    this.userEmail = this.auth.getUserEmail() || '';
+  }
 
   isMobileMenuOpen = false;
   isMobile = window.innerWidth <= 768;
@@ -21,6 +31,11 @@ export class HeaderComponent {
     const width = (event.target as Window).innerWidth;
     this.isMobile = width <= 768;
     this.isTablet = width > 768 && width <= 1024;
+  }
+
+  @HostListener('document:keydown.escape')
+  onEsc() {
+    this.closeMobileMenu();
   }
 
   handleItemCommand(item: MenuItem, originalEvent: Event): void {

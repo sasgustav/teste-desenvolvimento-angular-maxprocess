@@ -2,11 +2,12 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  position: relative;
 }
 
 :host ::ng-deep .app-menubar {
   background: var(--primary-color);
-  color: #fff;
+  color: var(--text-color);
   border: none;
   align-items: center;
   padding: 0 0rem;
@@ -18,13 +19,15 @@
 }
 
 :host ::ng-deep .app-menubar .p-menuitem-link {
-  color: #fff;
+  color: var(--text-color);
   padding: 0.75rem 1rem;
   font-weight: 500;
+  border-radius: 25px;
   border-bottom: 2px solid transparent;
   transition:
     background-color 0.2s,
-    border-color 0.2s;
+    border-color 0.2s,
+    color 0.2s;
 }
 
 :host ::ng-deep .app-menubar .p-menuitem-link:hover,
@@ -32,7 +35,7 @@
 :host ::ng-deep .app-menubar .p-menuitem-link.p-highlight {
   background: var(--primary-color-dark);
   border-bottom-color: var(--primary-color-dark);
-  color: #fff;
+  color: var(--text-color);
 }
 
 .brand {
@@ -57,6 +60,16 @@
   gap: 0.5rem;
 }
 
+.user-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-color);
+  text-align: center;
+  pointer-events: none;
+}
+
 .avatar-icon {
   border-radius: 50%;
   object-fit: cover;
@@ -66,20 +79,26 @@
   font-weight: 500;
 }
 
+:host ::ng-deep li.logout-item {
+  margin-left: auto;
+}
+
 .menu-toggle {
   display: flex;
   align-items: center;
   padding: 0.5rem;
   border: none;
   background: transparent;
-  color: #fff;
+  color: var(--text-color);
   cursor: pointer;
-  transition: background-color 0.2s;
+  border-radius: 25px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .menu-toggle:hover,
 .menu-toggle:focus {
   background: var(--primary-color-dark);
+  color: var(--text-color);
 }
 
 .mobile-sidebar {
@@ -94,12 +113,14 @@
   font-weight: 500;
   color: var(--text-color);
   text-decoration: none;
-  transition: background-color 0.2s;
+  border-radius: 25px;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 .mobile-sidebar ::ng-deep .mobile-panel-menu .p-menuitem-link:hover,
 .mobile-sidebar ::ng-deep .mobile-panel-menu .p-menuitem-link:focus {
   background: rgba(0, 0, 0, 0.05);
+  color: var(--text-color);
 }
 
 @media (max-width: 768px) {
