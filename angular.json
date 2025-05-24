@@ -18,7 +18,10 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
             "styles": [
               "node_modules/primeflex/primeflex.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
@@ -27,9 +30,23 @@
             ],
             "scripts": []
           }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "jwt-auth-angular:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "jwt-auth-angular:build:production"
+            }
+          }
         }
       }
     }
   },
-  "defaultProject": "jwt-auth-angular"
+  "defaultProject": "jwt-auth-angular",
+  "cli": {
+    "analytics": false
+  }
 }
