@@ -175,6 +175,22 @@
   border-color: var(--primary-color);
 }
 
+.google-icon .pi {
+  color: #db4437;
+}
+
+.facebook-icon .pi {
+  color: #1877f2;
+}
+
+.github-icon .pi {
+  color: #000000;
+}
+
+.apple-icon .pi {
+  color: #000000;
+}
+
 @media (max-width: 480px) {
   .login-card {
     margin: 1rem;
