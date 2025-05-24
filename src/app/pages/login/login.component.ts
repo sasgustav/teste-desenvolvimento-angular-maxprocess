@@ -1,22 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [MessageService],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent implements OnInit {
-  username = '';
-  password = '';
-  remember = false;
   error = '';
   loading = false;
 
   constructor(
     private auth: AuthService,
-    private router: Router
+    private router: Router,
+    private message: MessageService
   ) {}
 
   ngOnInit(): void {
@@ -29,11 +30,7 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    const saved = localStorage.getItem('rememberedUsername');
-    if (saved) {
-      this.username = saved;
-      this.remember = true;
-    }
+    // lembrado via localStorage é passado para o componente filho
   }
 
   /**
@@ -51,17 +48,17 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  login(): void {
+  login(credentials: { username: string; password: string; remember: boolean }): void {
     this.error = '';
-    if (!this.username.trim() || !this.password.trim()) {
+    if (!credentials.username.trim() || !credentials.password.trim()) {
       this.error = 'Informe usuário e senha';
       return;
     }
     this.loading = true;
-    this.auth.login(this.username, this.password).subscribe({
+    this.auth.login(credentials.username, credentials.password).subscribe({
       next: () => {
-        if (this.remember) {
-          localStorage.setItem('rememberedUsername', this.username);
+        if (credentials.remember) {
+          localStorage.setItem('rememberedUsername', credentials.username);
         } else {
           localStorage.removeItem('rememberedUsername');
         }
@@ -71,7 +68,7 @@ export class LoginComponent implements OnInit {
       error: () => {
         this.error = 'Credenciais inválidas';
         this.loading = false;
-      }
+      },
     });
   }
 }

@@ -1,0 +1,16 @@
+<p-menubar [model]="items" class="app-menubar" aria-label="Menu principal">
+  <ng-template pTemplate="start">
+    <ng-content></ng-content>
+  </ng-template>
+  <ng-template pTemplate="menuitem" let-item>
+    <a
+      [routerLink]="item.routerLink"
+      class="p-menuitem-link"
+      (click)="onCommand(item, $event)"
+      (keydown.enter)="onCommand(item, $event)"
+    >
+      <span class="p-menuitem-icon" [ngClass]="item.icon"></span>
+      <span class="p-menuitem-text">{{ item.label }}</span>
+    </a>
+  </ng-template>
+</p-menubar>

@@ -1,23 +1,5 @@
 <div class="home-wrapper">
   <h1>Dashboard</h1>
-  <div class="metrics-grid">
-    <app-metric-card
-      *ngFor="let metric of metrics"
-      [icon]="metric.icon"
-      [title]="metric.title"
-      [value]="metric.value"
-      [color]="metric.color"
-    ></app-metric-card>
-  </div>
-  <p-card class="chart-card">
-    <ng-template pTemplate="header">
-      <div class="chart-header">
-        <i class="pi pi-chart-bar"></i>
-        <span>Novos Usuários por Mês</span>
-      </div>
-    </ng-template>
-    <div class="chart-body">
-      <p-chart type="bar" [data]="chartData"></p-chart>
-    </div>
-  </p-card>
+  <app-metrics-grid [metrics]="metrics"></app-metrics-grid>
+  <app-user-chart [data]="chartData"></app-user-chart>
 </div>

@@ -19,6 +19,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MetricCardComponent } from './metric-card/metric-card.component';
 import { HeaderComponent } from './header/header.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { NavMenuComponent } from './nav-menu/nav-menu.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     MetricCardComponent,
     HeaderComponent,
     BreadcrumbsComponent,
+    NavMenuComponent,
+    UserProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -65,6 +69,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     MetricCardComponent,
     HeaderComponent,
     BreadcrumbsComponent,
+    NavMenuComponent,
+    UserProfileComponent,
   ],
 })
 export class SharedModule {}

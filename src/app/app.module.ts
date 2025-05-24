@@ -4,11 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthService } from './core/auth.service';
-import { AuthGuard } from './core/auth.guard';
-import { TokenInterceptor } from './core/token.interceptor';
-import { UserService } from './core/user.service';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -19,15 +15,10 @@ import { UserService } from './core/user.service';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,
-    SharedModule
+    SharedModule,
+    CoreModule
   ],
-  providers: [
-    AuthService,
-    AuthGuard,
-    UserService,
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
