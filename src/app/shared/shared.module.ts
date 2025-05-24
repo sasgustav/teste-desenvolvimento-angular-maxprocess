@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
@@ -28,6 +29,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
   ],
   imports: [
     CommonModule,
+    RouterModule,
     TableModule,
     InputTextModule,
     PasswordModule,
@@ -58,6 +60,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     ConfirmDialogModule,
     ToastModule,
     SkeletonModule,
+    RouterModule,
     FooterComponent,
     MetricCardComponent,
     HeaderComponent,
