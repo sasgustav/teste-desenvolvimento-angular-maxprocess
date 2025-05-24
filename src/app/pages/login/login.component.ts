@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   password = '';
   remember = false;
   error = '';
+  loading = false;
 
   constructor(
     private auth: AuthService,
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
       this.error = 'Informe usuário e senha';
       return;
     }
+    this.loading = true;
     this.auth.login(this.username, this.password).subscribe({
       next: () => {
         if (this.remember) {
@@ -40,8 +42,12 @@ export class LoginComponent implements OnInit {
           localStorage.removeItem('rememberedUsername');
         }
         this.router.navigate(['/home']);
+        this.loading = false;
       },
-      error: () => this.error = 'Credenciais inválidas'
+      error: () => {
+        this.error = 'Credenciais inválidas';
+        this.loading = false;
+      }
     });
   }
 }

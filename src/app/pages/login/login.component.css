@@ -1,27 +1,32 @@
 .login-wrapper {
-  justify-content: center;
-  min-height: 100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
   background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
 }
 
 .login-card {
   width: 100%;
-  max-width: 520px;
+  max-width: 480px;
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  background: var(--card-bg);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
   overflow: hidden;
+  animation: fadeIn 0.6s ease;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .login-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .login-header {
   display: flex;
   align-items: center;
+  gap: 1rem;
   background: var(--primary-color);
   color: #fff;
   padding: 1.5rem;
@@ -47,6 +52,7 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 .error-message {
@@ -56,6 +62,7 @@
 .login-field {
   margin-bottom: 1.25rem;
   position: relative;
+  font-size: 0.95rem;
 }
 
 .login-field .p-input-icon-left {
@@ -77,6 +84,7 @@
   border: 1px solid var(--input-border);
   border-radius: 0.5rem;
   background: var(--input-bg);
+  font-size: 1rem;
   transition: border-color 0.3s;
 }
 
@@ -91,7 +99,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 0 1.5rem;
+  margin: 1rem 0 2rem;
   font-size: 0.875rem;
 }
 
@@ -120,17 +128,20 @@
   background: var(--primary-color);
   border: none;
   border-radius: 0.5rem;
-  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
   margin-bottom: 1.5rem;
 }
 
 .login-button:hover {
   background: var(--primary-color-dark);
   transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .login-button:active {
   transform: translateY(0);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
 }
 
 .social-login {
@@ -138,7 +149,7 @@
 }
 
 .social-login p {
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
   font-size: 0.875rem;
   color: var(--text-color);
 }
@@ -152,10 +163,12 @@
 .social-icons .p-button {
   width: 3rem;
   height: 3rem;
+  border-radius: 50%;
 }
 
 .social-icons .outlined {
   border-color: var(--input-border);
+  background: #fff;
 }
 
 .social-icons .outlined:hover {
@@ -169,5 +182,16 @@
 
   .login-form {
     padding: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
