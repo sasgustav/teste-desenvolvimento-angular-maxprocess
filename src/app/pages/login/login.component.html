@@ -1,16 +1,15 @@
+<!-- src/app/pages/login/login.component.html -->
 <div class="login-wrapper">
-  <p-card class="login-card">
-    <ng-template pTemplate="header">
-      <div class="login-header">
-        <i class="fa-solid fa-lock icon-lock"></i>
-        <div class="login-title">
-          <h2>Bem-vindo de volta</h2>
-          <p>Faça login na sua conta</p>
-        </div>
+  <div class="login-card">
+    <header class="login-header">
+      <i class="fa-solid fa-lock icon-lock"></i>
+      <div class="login-title">
+        <h2>Bem-vindo de volta</h2>
+        <p>Faça login na sua conta</p>
       </div>
-    </ng-template>
-    <div class="login-form">
+    </header>
+    <div class="login-body">
       <app-login-form (login)="login($event)" [error]="error" [loading]="loading"></app-login-form>
     </div>
-  </p-card>
+  </div>
 </div>
