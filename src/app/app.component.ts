@@ -24,12 +24,15 @@ export class AppComponent {
 
   startTemplate = 'MaxProcess';
   showBreadcrumbs = true;
+  showHeader = true;
 
   constructor(private auth: AuthService, private router: Router) {
     this.router.events.subscribe(e => {
       if (e instanceof NavigationEnd) {
         const url = e.urlAfterRedirects;
-        this.showBreadcrumbs = !url.includes('/auth/login') && !url.includes('/auth/forgot-password');
+        const isAuthPage = url.includes('/auth/login') || url.includes('/auth/forgot-password');
+        this.showBreadcrumbs = !isAuthPage;
+        this.showHeader = !isAuthPage;
       }
     });
   }
