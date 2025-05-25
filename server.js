@@ -6,6 +6,11 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
 
+// Serve custom landing page
+server.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 server.post('/auth/login', (req, res) => {
   const { username, password } = req.body;
   if (username === 'demo-gustavo@gmail.com' && password === '123456') {
