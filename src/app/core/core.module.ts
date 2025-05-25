@@ -4,6 +4,8 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { UserService } from './user.service';
 import { TokenInterceptor } from './token.interceptor';
+import { MessageService } from 'primeng/api';
+import { NotificationService } from './notification.service';
 
 @NgModule({
   imports: [HttpClientModule],
@@ -11,6 +13,8 @@ import { TokenInterceptor } from './token.interceptor';
     AuthService,
     AuthGuard,
     UserService,
+    MessageService,
+    NotificationService,
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
   ],
 })
