@@ -52,4 +52,20 @@ export class AuthService {
   getUserEmail(): string | null {
     return localStorage.getItem('userEmail');
   }
+
+  /**
+   * Checks if a given JWT token is expired based on the `exp` claim.
+   * If the token does not contain an expiration, it is considered valid.
+   */
+  isTokenExpired(token: string): boolean {
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1])) as { exp?: number };
+      if (!payload.exp) {
+        return false;
+      }
+      return payload.exp * 1000 < Date.now();
+    } catch {
+      return false;
+    }
+  }
 }

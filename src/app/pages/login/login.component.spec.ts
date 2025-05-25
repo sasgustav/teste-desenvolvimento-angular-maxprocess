@@ -15,7 +15,11 @@ describe('LoginComponent', () => {
   let router: jasmine.SpyObj<Router>;
 
   beforeEach(async () => {
-    auth = jasmine.createSpyObj('AuthService', ['login', 'getToken']);
+    auth = jasmine.createSpyObj('AuthService', [
+      'login',
+      'getToken',
+      'isTokenExpired',
+    ]);
     router = jasmine.createSpyObj('Router', ['navigate']);
     await TestBed.configureTestingModule({
       declarations: [LoginComponent, LoginFormComponent],
