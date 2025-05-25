@@ -31,16 +31,21 @@
       padding: 0;
 
       li {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        transition: background 0.2s;
+        .nav-item-btn {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          border-radius: 0.5rem;
+          border: none;
+          background: none;
+          color: inherit;
+          transition: background 0.2s;
+        }
 
-        &.active,
-        &:hover {
+        &.active .nav-item-btn,
+        .nav-item-btn:hover {
           background: rgba(255, 255, 255, 0.2);
         }
       }
@@ -182,7 +187,16 @@
         padding: 0;
 
         li {
-          padding: 1rem;
+          .nav-item-btn {
+            width: 100%;
+            justify-content: flex-start;
+            padding: 1rem;
+          }
+
+          &.active .nav-item-btn,
+          .nav-item-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+          }
         }
       }
 

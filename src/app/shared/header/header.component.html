@@ -3,13 +3,16 @@
     <div class="left">
       <span class="logo">MaxProcess</span>
       <ul class="nav-list" *ngIf="!isMobile">
-        <li
-          *ngFor="let item of navItems"
-          (click)="navigate(item.path)"
-          routerLinkActive="active"
-        >
-          <i [class]="item.icon"></i>
-          <span>{{ item.label }}</span>
+        <li *ngFor="let item of navItems" routerLinkActive="active">
+          <button
+            type="button"
+            class="nav-item-btn"
+            (click)="navigate(item.path)"
+            [attr.aria-label]="item.label"
+          >
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </button>
         </li>
       </ul>
     </div>
@@ -42,13 +45,16 @@
     >
       <div class="menu-title">Menu Principal</div>
       <ul class="nav-list">
-        <li
-          *ngFor="let item of navItems"
-          (click)="navigate(item.path)"
-          routerLinkActive="active"
-        >
-          <i [class]="item.icon"></i>
-          <span>{{ item.label }}</span>
+        <li *ngFor="let item of navItems" routerLinkActive="active">
+          <button
+            type="button"
+            class="nav-item-btn"
+            (click)="navigate(item.path)"
+            [attr.aria-label]="item.label"
+          >
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </button>
         </li>
       </ul>
       <hr class="divider" />
