@@ -1,6 +1,3 @@
-Claro! Aqui está o seu `README.md` atualizado **com a nova seção “Credenciais de Acesso (Mock Login)”**, inserida logo após a seção **"Configurações de Ambiente"**, mantendo toda a estrutura intacta:
-
-````markdown
 # Teste FrontEnd Angular com JWT
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
@@ -261,4 +258,4 @@ Este projeto está licenciado sob a licença [MIT](./LICENSE).
 Desenvolvido por **Gustavo Vasconcelos**.
 Em caso de dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
 
-* [**LinkedIn - Gustavo Vasconcelos**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
+* [**LinkedIn**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
