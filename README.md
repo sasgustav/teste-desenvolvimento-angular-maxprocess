@@ -234,9 +234,10 @@ Este projeto está licenciado sob a licença [MIT](./LICENSE).
 ---
 
 ## Contato
-
+Desenvolvido por **Gustavo Vasconcelos**.
 Em caso de dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
 
-* [**LinkedIn**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
+- [**LinkedIn**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
 
-Fique à vontade para dar **fork** neste repositório, abrir **issues** e participar! Bom desenvolvimento!
+Fique à vontade para dar **fork** neste repositório, abrir **issues** e participar!
+Bom desenvolvimento!
