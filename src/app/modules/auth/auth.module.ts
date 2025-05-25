@@ -8,6 +8,11 @@ import { SocialLoginButtonsComponent } from './components/social-login-buttons/s
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { SharedModule } from '../../shared/shared.module';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { CheckboxModule } from 'primeng/checkbox';
+import { ButtonModule } from 'primeng/button';
+import { MessageModule } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,16 @@ import { SharedModule } from '../../shared/shared.module';
     SocialLoginButtonsComponent,
     ForgotPasswordComponent,
   ],
-  imports: [CommonModule, FormsModule, SharedModule, AuthRoutingModule]
+  imports: [
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    AuthRoutingModule,
+    InputTextModule,
+    PasswordModule,
+    CheckboxModule,
+    ButtonModule,
+    MessageModule,
+  ]
 })
 export class AuthModule {}
