@@ -30,19 +30,3 @@ app-root {
   flex-direction: column;
   flex: 1;
 }
-
-span.p-button-icon.fab.fa-google {
-  color: #385bef;
-}
-
-span.p-button-icon.fab.fa-facebook-f {
-  color: #385bef;
-}
-
-span.p-button-icon.fab.fa-github {
-  color: #385bef;
-}
-
-span.p-button-icon.fab.fa-apple {
-  color: #385bef;
-}

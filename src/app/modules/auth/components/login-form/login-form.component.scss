@@ -1,1 +1,180 @@
-/* styles for login form */
+/* src/app/modules/auth/components/login-form/login-form.component.scss */
+:host {
+  display: block;
+}
+
+.login-form-component {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.error-message {
+  margin-bottom: 1rem;
+}
+
+.login-field {
+  position: relative;
+  width: 100%;
+
+  .p-input-icon-left,
+  .p-password {
+    width: 100%;
+    display: block;
+  }
+
+  i.fa {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #5c61f4;
+  }
+
+  input,
+  .p-password input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background: #f9f9f9;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  input:focus,
+  .p-password input:focus {
+    border-color: #5c61f4;
+    background: #fff;
+    outline: none;
+  }
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    label {
+      font-size: 0.875rem;
+      color: #555;
+    }
+  }
+
+  app-forgot-password-link {
+    font-size: 0.875rem;
+
+    a {
+      color: #5c61f4;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #3f51b5;
+    }
+  }
+}
+
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #5c61f4;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background: #3f51b5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.social-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #555;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+
+    button.p-button {
+      width: 3rem;
+      height: 3rem;
+      padding: 0;
+      border-radius: 50%;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      i {
+        font-size: 1.2rem;
+      }
+
+      &.google-icon i {
+        color: #db4437;
+      }
+      &.facebook-icon i {
+        color: #1877f2;
+      }
+      &.github-icon i {
+        color: #333333;
+      }
+      &.apple-icon i {
+        color: #000000;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form-component {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .login-button {
+    font-size: 0.95rem;
+  }
+}
