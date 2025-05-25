@@ -37,6 +37,12 @@ describe('AppComponent', () => {
     expect(component.showHeader).toBeFalse();
   });
 
+  it('should show header on other pages', () => {
+    component.showHeader = false;
+    routerEvents$.next(new NavigationEnd(1, '/home', '/home'));
+    expect(component.showHeader).toBeTrue();
+  });
+
   it('should call logout and navigate', () => {
     const router = TestBed.inject(Router);
     spyOn(router, 'navigate');

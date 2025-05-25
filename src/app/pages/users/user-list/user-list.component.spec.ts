@@ -75,4 +75,13 @@ describe('UserListComponent', () => {
     expect(service.deleteUser).toHaveBeenCalledWith(1);
     expect(component.loadUsers).toHaveBeenCalled();
   });
+
+  it('should confirm delete and call service on accept', () => {
+    const confirm = TestBed.inject(ConfirmationService);
+    spyOn(confirm, 'confirm').and.callFake(opts => opts.accept!());
+    spyOn(component, 'deleteUser');
+    component.confirmDelete(mockUsers[0]);
+    expect(confirm.confirm).toHaveBeenCalled();
+    expect(component.deleteUser).toHaveBeenCalledWith(mockUsers[0]);
+  });
 });
