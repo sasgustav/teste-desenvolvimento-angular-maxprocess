@@ -70,7 +70,9 @@
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
+    transition:
+      background 0.2s,
+      transform 0.1s;
 
     i {
       font-size: 1rem;
@@ -135,6 +137,10 @@
     z-index: 1001;
     pointer-events: none;
 
+    &.open {
+      pointer-events: auto;
+    }
+
     .backdrop {
       position: absolute;
       top: 0;
@@ -195,4 +201,3 @@
     }
   }
 }
-
