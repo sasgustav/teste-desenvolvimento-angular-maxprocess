@@ -35,4 +35,16 @@ describe('AuthService', () => {
     localStorage.setItem('token', 'abc');
     expect(service.getToken()).toBe('abc');
   });
+
+  it('should detect expired token', () => {
+    const past = Math.floor(Date.now() / 1000) - 60;
+    const token = `h.${btoa(JSON.stringify({ exp: past }))}.s`;
+    expect(service.isTokenExpired(token)).toBeTrue();
+  });
+
+  it('should detect valid token', () => {
+    const future = Math.floor(Date.now() / 1000) + 60;
+    const token = `h.${btoa(JSON.stringify({ exp: future }))}.s`;
+    expect(service.isTokenExpired(token)).toBeFalse();
+  });
 });

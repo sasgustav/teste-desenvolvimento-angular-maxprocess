@@ -8,14 +8,18 @@ describe('AuthGuard', () => {
   let router: jasmine.SpyObj<Router>;
 
   beforeEach(() => {
-    authService = jasmine.createSpyObj('AuthService', ['getToken', 'logout']);
+    authService = jasmine.createSpyObj('AuthService', [
+      'getToken',
+      'logout',
+      'isTokenExpired',
+    ]);
     router = jasmine.createSpyObj('Router', ['navigate']);
     guard = new AuthGuard(authService, router);
   });
 
   it('should allow activation with valid token', () => {
     authService.getToken.and.returnValue('header.payload.signature');
-    spyOn<any>(guard as any, 'tokenExpired').and.returnValue(false);
+    authService.isTokenExpired.and.returnValue(false);
     expect(guard.canActivate()).toBeTrue();
   });
 

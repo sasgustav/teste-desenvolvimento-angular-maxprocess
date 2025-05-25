@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     // redirecionamos diretamente para a home para evitar
     // exibir novamente o formulário de login.
     const token = this.auth.getToken();
-    if (token && !this.tokenExpired(token)) {
+    if (token && !this.auth.isTokenExpired(token)) {
       this.router.navigate(['/home']);
       return;
     }
@@ -39,20 +39,6 @@ export class LoginComponent implements OnInit, OnDestroy {
       localStorage.getItem('rememberedUsername') ?? '';
   }
 
-  /**
-   * Verifica se o token JWT está expirado.
-   */
-  private tokenExpired(token: string): boolean {
-    try {
-      const payload = JSON.parse(atob(token.split('.')[1])) as { exp?: number };
-      if (!payload.exp) {
-        return false;
-      }
-      return payload.exp * 1000 < Date.now();
-    } catch {
-      return false;
-    }
-  }
 
   login(credentials: {
     username: string;
