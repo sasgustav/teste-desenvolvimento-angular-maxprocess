@@ -14,22 +14,38 @@
       <div class="user-email">{{ userEmail }}</div>
     </div>
     <button class="logout-btn" *ngIf="!isMobile" (click)="logout()">Sair</button>
-    <button class="burger" *ngIf="isMobile" (click)="toggleMenu()" aria-label="Menu">
+    <button
+      class="burger"
+      *ngIf="isMobile"
+      (click)="toggleMenu()"
+      aria-label="Menu"
+      [attr.aria-expanded]="isMenuOpen"
+      aria-controls="mobile-menu"
+    >
       <i class="fa fa-bars"></i>
     </button>
   </div>
-  <div class="mobile-menu" *ngIf="isMobile" [class.open]="isMenuOpen">
-    <ul class="nav-list">
-      <li *ngFor="let item of navItems" (click)="navigate(item.path)" routerLinkActive="active">
-        <i [class]="item.icon"></i>
-        <span>{{ item.label }}</span>
-      </li>
-    </ul>
-    <div class="user-section">
-      <div class="user-name">{{ userName }}</div>
-      <div class="user-email">{{ userEmail }}</div>
-      <button class="logout-btn" (click)="logout()">Sair</button>
-    </div>
+  <div class="mobile-menu" *ngIf="isMobile">
+    <div class="backdrop" [class.open]="isMenuOpen" (click)="closeMenu()"></div>
+    <nav
+      class="panel"
+      id="mobile-menu"
+      [class.open]="isMenuOpen"
+      [attr.aria-hidden]="!isMenuOpen"
+    >
+      <ul class="nav-list">
+        <li *ngFor="let item of navItems" (click)="navigate(item.path)" routerLinkActive="active">
+          <i [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </li>
+      </ul>
+      <hr class="divider" />
+      <div class="user-section">
+        <div class="user-name">{{ userName }}</div>
+        <div class="user-email">{{ userEmail }}</div>
+        <button class="logout-btn" (click)="logout()">Sair</button>
+      </div>
+    </nav>
   </div>
 </header>
 

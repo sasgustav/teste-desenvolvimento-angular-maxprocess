@@ -45,8 +45,19 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  @HostListener('document:keydown.escape')
+  onEscape(): void {
+    if (this.isMobile) {
+      this.isMenuOpen = false;
+    }
+  }
+
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 
   navigate(path: string): void {
@@ -59,6 +70,9 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     this.auth.logout();
     this.router.navigate(['/auth/login']);
+    if (this.isMobile) {
+      this.isMenuOpen = false;
+    }
   }
 }
 
