@@ -1,64 +1,27 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mock API - MaxProcess</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0288d1, #26c6da);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-    .container {
-      text-align: center;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem 3rem;
-      border-radius: 8px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-    h1 {
-      margin-top: 0;
-      font-size: 2rem;
-    }
-    p {
-      margin-bottom: 1.5rem;
-    }
-    .endpoints {
-      text-align: left;
-      margin: 0 auto;
-      max-width: 300px;
-    }
-    .endpoint {
-      background: rgba(0,0,0,0.2);
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      margin-bottom: 0.5rem;
-    }
-    code {
-      color: #ffeb3b;
-    }
-    a {
-      color: #ffeb3b;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <h1>Mock API MaxProcess</h1>
-    <p>Bem-vindo! Esta é a interface visual para a nossa API de testes.</p>
+    <p class="subtitle">Bem-vindo! Explore nossos endpoints de teste.</p>
     <div class="endpoints">
-      <div class="endpoint"><code>POST /auth/login</code></div>
-      <div class="endpoint"><code>GET /users</code></div>
+      <div class="endpoint">
+        <span class="method">POST</span> <code>/auth/login</code>
+      </div>
+      <div class="endpoint">
+        <span class="method">GET</span> <code>/users</code>
+      </div>
     </div>
-    <p>Acesse a aplicação Angular em <a href="http://localhost:4200">localhost:4200</a>.</p>
+    <p class="footer-text">
+      Acesse a aplicação Angular em
+      <a href="http://localhost:4200">http://localhost:4200</a>
+    </p>
   </div>
 </body>
 </html>

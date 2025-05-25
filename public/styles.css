@@ -1,0 +1,106 @@
+:root {
+  --bg-gradient-start: #0288d1;
+  --bg-gradient-end: #26c6da;
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --text-light: #ffffff;
+  --accent: #ffeb3b;
+  --radius: 12px;
+  --font-stack: 'Inter', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-stack);
+  background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background: var(--card-bg);
+  padding: 2.5rem 3rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 360px;
+  width: 100%;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.endpoints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.endpoint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  transition: background 0.2s;
+}
+
+.endpoint:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.method {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  color: var(--text-light);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #fff;
+}
+
+.footer-text {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+  .endpoint {
+    flex-direction: column;
+    font-size: 0.875rem;
+  }
+}
