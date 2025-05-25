@@ -1,0 +1,19 @@
+.social-login {
+  text-align: center;
+
+  p {
+    margin-bottom: 0.75rem;
+  }
+
+  .social-icons {
+    display: inline-flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .social-icons .p-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+  }
+}
