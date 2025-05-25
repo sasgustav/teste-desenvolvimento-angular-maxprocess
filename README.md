@@ -261,4 +261,4 @@ Este projeto está licenciado sob a licença [MIT](./LICENSE).
 Desenvolvido por **Gustavo Vasconcelos**.
 Em caso de dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
 
-* [**LinkedIn**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
+* [**LinkedIn - Gustavo Vasconcelos**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
