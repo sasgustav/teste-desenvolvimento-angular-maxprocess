@@ -61,6 +61,14 @@ app-root {
   margin-bottom: 1rem;
 }
 
+i.fa.fa-users {
+  padding-right: 8px;
+}
+
+i.fa.fa-home {
+  padding-right: 8px;
+}
+
 app-social-login-buttons {
-    text-align: center;
+  text-align: center;
 }

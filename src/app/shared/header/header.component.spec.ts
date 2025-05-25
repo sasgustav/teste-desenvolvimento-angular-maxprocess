@@ -57,11 +57,19 @@ describe('HeaderComponent', () => {
   });
 
   it('should update mobile state and close menu on resize', () => {
-    Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 500 });
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 500,
+    });
     component.isMenuOpen = true;
     component.onResize();
     expect(component.isMobile).toBeTrue();
-    Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 1024 });
+    Object.defineProperty(window, 'innerWidth', {
+      writable: true,
+      configurable: true,
+      value: 1024,
+    });
     component.isMenuOpen = true;
     component.onResize();
     expect(component.isMobile).toBeFalse();
