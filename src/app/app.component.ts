@@ -51,18 +51,9 @@ export class AppComponent implements OnInit, OnDestroy {
         icon: 'pi pi-users',
         items: [
           { label: 'Lista', routerLink: '/users', icon: 'pi pi-list' },
-          { label: 'Novo', routerLink: '/users/new', icon: 'pi pi-user-plus' }
         ]
       }
     ];
-    if (this.auth.isAuthenticated()) {
-      items.push({
-        label: 'Sair',
-        command: () => this.logout(),
-        icon: 'pi pi-sign-out',
-        styleClass: 'logout-item'
-      });
-    }
     return items;
   }
 }
