@@ -8,7 +8,12 @@
       </div>
     </header>
     <div class="login-body">
-      <app-login-form (login)="login($event)" [error]="error" [loading]="loading"></app-login-form>
+      <app-login-form
+        (login)="login($event)"
+        [error]="error"
+        [loading]="loading"
+        [username]="rememberedUsername"
+      ></app-login-form>
     </div>
   </div>
 </div>

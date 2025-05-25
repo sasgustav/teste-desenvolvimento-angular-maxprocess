@@ -13,7 +13,7 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginFormComponent {
-  username = '';
+  @Input() username = '';
   password = '';
   remember = false;
   @Input() error = '';
