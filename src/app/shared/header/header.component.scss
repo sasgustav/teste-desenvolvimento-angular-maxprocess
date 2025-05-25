@@ -1,183 +1,129 @@
-.header-nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  position: relative;
-}
-
-:host ::ng-deep .app-menubar {
-  background: var(--primary-color);
-  color: var(--text-color);
-  border: none;
-  align-items: center;
-  padding: 0 0rem;
-}
-
-/* Itens do menu (centro) */
-:host ::ng-deep .p-menubar-root-list {
-  flex: 1;
-  justify-content: center;
-  gap: 1rem;
-}
-:host ::ng-deep .p-menuitem-link {
+.app-header {
+  background: #3f51b5;
   color: #fff;
-  padding: 0.75rem 1rem;
-  font-weight: 500;
-  border-radius: 25px;
-  transition: background-color 0.2s, color 0.2s;
-}
-:host ::ng-deep .p-menuitem-link:hover,
-:host ::ng-deep .p-menuitem-link.p-highlight {
-  background: var(--primary-color-dark);
 }
 
-/* Área de usuário e botão sair (end) */
-:host ::ng-deep .p-menubar-end {
-  margin-left: auto;
-  gap: 1rem;
-}
-.logout-button {
-  border-radius: 25px;
-  background: #fff;
-  color: var(--primary-color);
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 0.5rem 1rem;
-  transition: background-color 0.2s;
-}
-.logout-button:hover {
-  background: #f0f0f0;
 }
 
-:host ::ng-deep .p-menubar-root-list {
-  flex: 1;
-  justify-content: center;
-}
-
-:host ::ng-deep .app-menubar .p-menuitem-link {
-  color: var(--text-color);
-  padding: 0.75rem 1rem;
-  font-weight: 500;
-  border-radius: 25px;
-  border-bottom: 2px solid transparent;
-  transition:
-    background-color 0.2s,
-    border-color 0.2s,
-    color 0.2s;
-}
-
-:host ::ng-deep .app-menubar .p-menuitem-link:hover,
-:host ::ng-deep .app-menubar .p-menuitem-link:focus,
-:host ::ng-deep .app-menubar .p-menuitem-link.p-highlight {
-  background: var(--primary-color-dark);
-  border-bottom-color: var(--primary-color-dark);
-  color: var(--text-color);
-}
-
-.brand {
+.logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.logo-icon {
-  font-size: 1.5rem;
-}
-
-.title {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
   margin-right: 1rem;
 }
 
-.profile {
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.right {
   display: flex;
   align-items: center;
+  gap: 1rem;
+}
+
+.user {
+  text-align: right;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.logout-btn:hover {
+  background: #fff;
+  color: #3f51b5;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background: #3f51b5;
+  color: #fff;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
-.user-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
-  color: var(--text-color);
-}
-
-.avatar-icon {
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.username {
-  font-weight: 500;
-}
-
-:host ::ng-deep li.logout-item {
-  margin-left: auto;
-}
-
-.menu-toggle {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem;
-  border: none;
-  background: transparent;
-  color: var(--text-color);
-  cursor: pointer;
-  border-radius: 25px;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.menu-toggle:hover,
-.menu-toggle:focus {
-  background: var(--primary-color-dark);
-  color: var(--text-color);
-}
-
-.mobile-sidebar {
-  transition: transform 0.3s ease;
-}
-
-.mobile-sidebar ::ng-deep .mobile-panel-menu .p-menuitem-link {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 1rem;
-  font-weight: 500;
-  color: var(--text-color);
+.mobile-nav a {
+  color: #fff;
   text-decoration: none;
-  border-radius: 25px;
-  transition: background-color 0.2s, color 0.2s;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
-.mobile-sidebar ::ng-deep .mobile-panel-menu .p-menuitem-link:hover,
-.mobile-sidebar ::ng-deep .mobile-panel-menu .p-menuitem-link:focus {
-  background: rgba(0, 0, 0, 0.05);
-  color: var(--text-color);
+.mobile-nav a:hover,
+.mobile-nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.mobile-user {
+  text-align: right;
 }
 
 @media (max-width: 768px) {
-  :host ::ng-deep .p-menubar-root-list {
+  .nav-links {
     display: none;
   }
-}
 
-@media (min-width: 769px) {
-  .menu-toggle {
+  .menu-btn {
+    display: block;
+  }
+
+  .mobile-nav {
     display: none;
   }
-}
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  :host ::ng-deep .p-menuitem-text {
-    display: none;
-  }
-  :host ::ng-deep .app-menubar .p-menuitem-link {
-    padding: 0.75rem;
-  }
-}
-
-@media (min-width: 480px) {
-  .title {
-    font-size: 1.5rem;
+  .mobile-nav.open {
+    display: flex;
   }
 }
