@@ -1,27 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mock API - MaxProcess</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Mock API MaxProcess</h1>
-    <p class="subtitle">Bem-vindo! Explore nossos endpoints de teste.</p>
-    <div class="endpoints">
-      <div class="endpoint">
-        <span class="method">POST</span> <code>/auth/login</code>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mock API - MaxProcess - Gustavo Vasconcelos</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Mock API MaxProcess - Gustavo Vasconcelos</h1>
+        <p class="subtitle">
+          Bem-vindo! Explore nossos <span class="highlight">endpoints</span>.
+        </p>
+      </header>
+      <div class="endpoints-grid">
+        <div class="endpoint-card">
+          <div class="endpoint-icon"><i class="pi pi-sign-in"></i></div>
+          <div class="endpoint-info">
+            <span class="method">POST</span>
+            <code>/auth/login</code>
+          </div>
+        </div>
+        <div class="endpoint-card">
+          <div class="endpoint-icon"><i class="pi pi-users"></i></div>
+          <div class="endpoint-info">
+            <span class="method">GET</span>
+            <code>/users</code>
+          </div>
+        </div>
       </div>
-      <div class="endpoint">
-        <span class="method">GET</span> <code>/users</code>
-      </div>
+      <footer class="footer-text">
+        <p>Acesse a aplicação Angular em</p>
+        <a href="http://localhost:4200" class="link">http://localhost:4200</a>
+      </footer>
     </div>
-    <p class="footer-text">
-      Acesse a aplicação Angular em
-      <a href="http://localhost:4200">http://localhost:4200</a>
-    </p>
-  </div>
-</body>
+  </body>
 </html>
