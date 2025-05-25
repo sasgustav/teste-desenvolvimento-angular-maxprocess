@@ -4,32 +4,33 @@
 
   /* Login gradient */
   --primary-gradient-start: #4e54c8;
-  --primary-gradient-end:   #8f94fb;
+  --primary-gradient-end: #8f94fb;
 
   /* Primary buttons, headers, icons */
-  --primary-color:      #5c61f4;
+  --primary-color: #5c61f4;
   --primary-color-dark: #4649c8;
 
   /* Cards and panels */
-  --card-bg:   #ffffff;
-  --text-color:#333333;
+  --card-bg: #ffffff;
+  --text-color: #333333;
   --border-radius: 1rem;
 
   /* Inputs */
-  --input-bg:        #fafafa;
-  --input-border:    #dddddd;
-  --input-focus-bg:  #ffffff;
+  --input-bg: #fafafa;
+  --input-border: #dddddd;
+  --input-focus-bg: #ffffff;
 
   /* Social buttons */
-  --social-bg:       #ffffff;
-  --social-shadow:   rgba(0,0,0,0.08);
-  --social-google:   #db4437;
+  --social-bg: #ffffff;
+  --social-shadow: rgba(0, 0, 0, 0.08);
+  --social-google: #db4437;
   --social-facebook: #1877f2;
-  --social-github:   #333333;
-  --social-apple:    #000000;
+  --social-github: #333333;
+  --social-apple: #000000;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   font-family: var(--font-family);
@@ -42,4 +43,12 @@ app-root {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.p-datatable {
+  margin: 3rem;
+}
+
+.filters {
+  margin: 3rem;
 }
