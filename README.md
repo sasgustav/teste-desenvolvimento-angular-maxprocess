@@ -240,7 +240,7 @@ Desenvolvido com dedicação por **Gustavo Vasconcelos** — Tech Lead e Especia
 
 Se você tiver dúvidas, sugestões, propostas de melhoria ou quiser trocar ideias sobre Angular, arquitetura de software ou desenvolvimento web, sinta-se à vontade para entrar em contato:
 
-- 🌐 [**LinkedIn** – Conecte-se comigo](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
+🌐 [**LinkedIn** – Conecte-se comigo](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
 
 Fique à vontade para **abrir issues**, contribuir com melhorias ou dar um ⭐ no repositório.
 Obrigado por visitar e bom desenvolvimento!
