@@ -1,4 +1,6 @@
+// src/app/shared/header/header.component.ts
 import { Component, Input, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
 
@@ -8,8 +10,7 @@ import { AuthService } from '../../core/auth.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @Input() items: Array<{ label: string; routerLink: string; icon?: string }> =
-    [];
+  @Input() items: MenuItem[] = [];
   @Input() title = '';
 
   userName = '';
