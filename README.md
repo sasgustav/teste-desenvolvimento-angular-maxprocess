@@ -1,3 +1,6 @@
+Claro! Aqui está o seu `README.md` atualizado **com a nova seção “Credenciais de Acesso (Mock Login)”**, inserida logo após a seção **"Configurações de Ambiente"**, mantendo toda a estrutura intacta:
+
+````markdown
 # Teste FrontEnd Angular com JWT
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
@@ -20,6 +23,7 @@ Este repositório apresenta uma aplicação Angular simples focada em estudos de
     - [Ambiente de Mock](#ambiente-de-mock)
       - [Endpoints disponíveis](#endpoints-disponíveis)
     - [Configurações de Ambiente](#configurações-de-ambiente)
+    - [Credenciais de Acesso (Mock Login)](#credenciais-de-acesso-mock-login)
   - [Build para Produção](#build-para-produção)
   - [Testes](#testes)
     - [Unitários](#unitários)
@@ -77,7 +81,7 @@ Caso não tenha o Angular CLI e o json-server instalados globalmente, instale-os
 
 ```bash
 npm install -g @angular/cli json-server
-```
+````
 
 *ou use o `npx` sempre que precisar.*
 
@@ -133,6 +137,25 @@ src/environments/environment*.ts
 ```
 
 Ajuste a propriedade `apiBase` conforme seu ambiente (desenvolvimento, produção, etc.).
+
+### Credenciais de Acesso (Mock Login)
+
+Para autenticar-se na aplicação durante os testes, utilize as seguintes credenciais predefinidas no mock server (`json-server`):
+
+```
+Usuário: demo-gustavo@gmail.com
+Senha: 123456
+```
+
+Essas credenciais são validadas pelo endpoint `POST /auth/login`, que retorna um token fictício (`fake-jwt-token`) em caso de sucesso.
+
+Caso deseje personalizar essas credenciais, edite o seguinte trecho no script de mock:
+
+```js
+if (username === 'demo-gustavo@gmail.com' && password === '123456') {
+  return res.json({ token: 'fake-jwt-token' });
+}
+```
 
 ---
 
@@ -234,10 +257,11 @@ Este projeto está licenciado sob a licença [MIT](./LICENSE).
 ---
 
 ## Contato
+
 Desenvolvido por **Gustavo Vasconcelos**.
 Em caso de dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
 
-- [**LinkedIn**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
+* [**LinkedIn**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
 
 Fique à vontade para dar **fork** neste repositório, abrir **issues** e participar!
 Bom desenvolvimento!
