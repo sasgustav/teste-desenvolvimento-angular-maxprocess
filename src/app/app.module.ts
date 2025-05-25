@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     SharedModule,
     CoreModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
