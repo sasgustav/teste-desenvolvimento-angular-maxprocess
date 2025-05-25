@@ -3,7 +3,11 @@
     <div class="left">
       <span class="logo">MaxProcess</span>
       <ul class="nav-list" *ngIf="!isMobile">
-        <li *ngFor="let item of navItems" (click)="navigate(item.path)" routerLinkActive="active">
+        <li
+          *ngFor="let item of navItems"
+          (click)="navigate(item.path)"
+          routerLinkActive="active"
+        >
           <i [class]="item.icon"></i>
           <span>{{ item.label }}</span>
         </li>
@@ -28,7 +32,7 @@
       <i class="fa fa-bars"></i>
     </button>
   </div>
-  <div class="mobile-menu" *ngIf="isMobile">
+  <div class="mobile-menu" *ngIf="isMobile" [class.open]="isMenuOpen">
     <div class="backdrop" [class.open]="isMenuOpen" (click)="closeMenu()"></div>
     <nav
       class="panel"
@@ -37,7 +41,11 @@
       [attr.aria-hidden]="!isMenuOpen"
     >
       <ul class="nav-list">
-        <li *ngFor="let item of navItems" (click)="navigate(item.path)" routerLinkActive="active">
+        <li
+          *ngFor="let item of navItems"
+          (click)="navigate(item.path)"
+          routerLinkActive="active"
+        >
           <i [class]="item.icon"></i>
           <span>{{ item.label }}</span>
         </li>
@@ -54,4 +62,3 @@
     </nav>
   </div>
 </header>
-
