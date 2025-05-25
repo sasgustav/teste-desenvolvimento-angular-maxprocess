@@ -1,4 +1,4 @@
 <app-user-filter (filterChange)="onFilter($event)" (clear)="clearFilters()"></app-user-filter>
 <app-user-table [users]="filteredUsers" [loading]="loading" (edit)="onEdit($event)" (delete)="confirmDelete($event)"></app-user-table>
 <p-toast></p-toast>
-<p-confirmDialog [closable]="false"></p-confirmDialog>
+<p-confirmDialog appendTo="body" [closable]="false"></p-confirmDialog>

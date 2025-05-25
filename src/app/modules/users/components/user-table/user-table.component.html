@@ -1,3 +1,4 @@
+<div class="table-wrapper">
 <p-table [value]="users" [paginator]="true" [rows]="10" [loading]="loading" dataKey="id" responsiveLayout="stack" breakpoint="768px">
   <ng-template pTemplate="header">
     <tr>
@@ -26,3 +27,4 @@
     <tr><td [attr.colspan]="6">Nenhum usuário encontrado</td></tr>
   </ng-template>
 </p-table>
+</div>
