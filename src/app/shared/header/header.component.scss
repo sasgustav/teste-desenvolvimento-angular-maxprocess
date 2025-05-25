@@ -170,7 +170,6 @@
       transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
-      padding-top: 4rem;
 
       &.open {
         transform: translateX(0);
@@ -200,4 +199,11 @@
       }
     }
   }
+}
+
+.menu-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
 }
