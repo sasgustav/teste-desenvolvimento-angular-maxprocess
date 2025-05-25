@@ -1,24 +1,35 @@
-<!-- src/app/shared/header/header.component.html -->
 <header class="app-header">
   <div class="header-inner">
-    <div class="brand">
+    <div class="left">
       <span class="logo">MaxProcess</span>
-    </div>
-    <button class="burger" (click)="toggleMenu()" aria-label="Menu">
-      <i class="fa fa-bars"></i>
-    </button>
-    <nav [class.open]="isMenuOpen">
-      <ul class="nav-list">
+      <ul class="nav-list" *ngIf="!isMobile">
         <li *ngFor="let item of navItems" (click)="navigate(item.path)" routerLinkActive="active">
-          <i [class]="item.iconClass"></i>
+          <i [class]="item.icon"></i>
           <span>{{ item.label }}</span>
         </li>
       </ul>
-      <div class="user-section">
-        <div class="user-name">{{ userName }}</div>
-        <small class="user-email">{{ userEmail }}</small>
-        <button class="logout-btn" (click)="logout()">Sair</button>
-      </div>
-    </nav>
+    </div>
+    <div class="center" *ngIf="!isMobile">
+      <div class="user-name">{{ userName }}</div>
+      <div class="user-email">{{ userEmail }}</div>
+    </div>
+    <button class="logout-btn" *ngIf="!isMobile" (click)="logout()">Sair</button>
+    <button class="burger" *ngIf="isMobile" (click)="toggleMenu()" aria-label="Menu">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  <div class="mobile-menu" *ngIf="isMobile" [class.open]="isMenuOpen">
+    <ul class="nav-list">
+      <li *ngFor="let item of navItems" (click)="navigate(item.path)" routerLinkActive="active">
+        <i [class]="item.icon"></i>
+        <span>{{ item.label }}</span>
+      </li>
+    </ul>
+    <div class="user-section">
+      <div class="user-name">{{ userName }}</div>
+      <div class="user-email">{{ userEmail }}</div>
+      <button class="logout-btn" (click)="logout()">Sair</button>
+    </div>
   </div>
 </header>
+

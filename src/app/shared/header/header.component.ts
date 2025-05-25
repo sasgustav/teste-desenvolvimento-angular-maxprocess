@@ -1,12 +1,12 @@
 // src/app/shared/header/header.component.ts
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
 
 interface NavItem {
   label: string;
   path: string;
-  iconClass: string;
+  icon: string;
 }
 
 @Component({
@@ -21,8 +21,8 @@ export class HeaderComponent implements OnInit {
   isMobile = window.innerWidth <= 768;
 
   navItems: NavItem[] = [
-    { label: 'Dashboard', path: '/home', iconClass: 'fa fa-home' },
-    { label: 'Usuários', path: '/users', iconClass: 'fa fa-users' }
+    { label: 'Dashboard', path: '/home', icon: 'fa fa-home' },
+    { label: 'Usuários', path: '/users', icon: 'fa fa-users' }
   ];
 
   constructor(private auth: AuthService, private router: Router) {}
@@ -51,6 +51,9 @@ export class HeaderComponent implements OnInit {
 
   navigate(path: string): void {
     this.router.navigate([path]);
+    if (this.isMobile) {
+      this.isMenuOpen = false;
+    }
   }
 
   logout(): void {
@@ -58,3 +61,4 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/auth/login']);
   }
 }
+
