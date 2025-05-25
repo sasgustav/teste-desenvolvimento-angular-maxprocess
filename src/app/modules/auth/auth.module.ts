@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from '../../pages/login/login.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { ForgotPasswordLinkComponent } from './components/forgot-password-link/forgot-password-link.component';
@@ -13,6 +13,8 @@ import { PasswordModule } from 'primeng/password';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ButtonModule } from 'primeng/button';
 import { MessageModule } from 'primeng/message';
+import { CardModule } from 'primeng/card';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,16 @@ import { MessageModule } from 'primeng/message';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     SharedModule,
     AuthRoutingModule,
+    CardModule,
     InputTextModule,
     PasswordModule,
     CheckboxModule,
     ButtonModule,
     MessageModule,
+    ToastModule,
   ]
 })
 export class AuthModule {}
