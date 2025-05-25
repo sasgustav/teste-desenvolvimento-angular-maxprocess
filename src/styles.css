@@ -1,28 +1,41 @@
+/* src/styles.css */
 :root {
   --font-family: 'Inter', 'Roboto', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
-  --primary-gradient-start: #6a11cb;
-  --primary-gradient-end: #2575fc;
-  --primary-color: #3f51b5;
-  --primary-color-dark: #b1b5ce;
-  --card-bg: #ffffff;
-  --text-color: #333333;
+
+  /* Login gradient */
+  --primary-gradient-start: #4e54c8;
+  --primary-gradient-end:   #8f94fb;
+
+  /* Primary buttons, headers, icons */
+  --primary-color:      #5c61f4;
+  --primary-color-dark: #4649c8;
+
+  /* Cards and panels */
+  --card-bg:   #ffffff;
+  --text-color:#333333;
   --border-radius: 1rem;
-  --input-bg: #f5f5f5;
-  --input-border: #cccccc;
-  --input-focus-bg: #ffffff;
+
+  /* Inputs */
+  --input-bg:        #fafafa;
+  --input-border:    #dddddd;
+  --input-focus-bg:  #ffffff;
+
+  /* Social buttons */
+  --social-bg:       #ffffff;
+  --social-shadow:   rgba(0,0,0,0.08);
+  --social-google:   #db4437;
+  --social-facebook: #1877f2;
+  --social-github:   #333333;
+  --social-apple:    #000000;
 }
 
-html,
-body {
+html, body {
   height: 100%;
-}
-
-body {
   margin: 0;
-  background-color: #f5f6fa;
   font-family: var(--font-family);
   display: flex;
   flex-direction: column;
+  background-color: #f5f6fa;
 }
 
 app-root {
