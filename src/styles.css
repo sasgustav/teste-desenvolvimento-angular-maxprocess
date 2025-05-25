@@ -60,3 +60,7 @@ app-root {
 .login-options {
   margin-bottom: 1rem;
 }
+
+app-social-login-buttons {
+    text-align: center;
+}
