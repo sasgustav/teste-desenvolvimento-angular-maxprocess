@@ -44,14 +44,6 @@ app-root {
   flex: 1;
 }
 
-.p-datatable {
-  margin: 3rem;
-}
-
-.filters {
-  margin: 3rem;
-}
-
 .login-field {
   margin-bottom: 1rem;
 }
