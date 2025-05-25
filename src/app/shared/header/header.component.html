@@ -13,7 +13,10 @@
       <div class="user-name">{{ userName }}</div>
       <div class="user-email">{{ userEmail }}</div>
     </div>
-    <button class="logout-btn" *ngIf="!isMobile" (click)="logout()">Sair</button>
+    <button class="logout-btn" *ngIf="!isMobile" (click)="logout()">
+      <i class="pi pi-sign-out"></i>
+      <span>Sair</span>
+    </button>
     <button
       class="burger"
       *ngIf="isMobile"
@@ -43,7 +46,10 @@
       <div class="user-section">
         <div class="user-name">{{ userName }}</div>
         <div class="user-email">{{ userEmail }}</div>
-        <button class="logout-btn" (click)="logout()">Sair</button>
+        <button class="logout-btn" (click)="logout()">
+          <i class="pi pi-sign-out"></i>
+          <span>Sair</span>
+        </button>
       </div>
     </nav>
   </div>
