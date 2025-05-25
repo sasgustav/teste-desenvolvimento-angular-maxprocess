@@ -20,10 +20,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   rememberedUsername = '';
   private subscription!: Subscription;
 
-  constructor(
-    private auth: AuthService,
-    private router: Router,
-  ) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     // Caso o usuário já possua um token válido no localStorage,
@@ -35,10 +32,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.rememberedUsername =
-      localStorage.getItem('rememberedUsername') ?? '';
+    this.rememberedUsername = localStorage.getItem('rememberedUsername') ?? '';
   }
-
 
   login(credentials: {
     username: string;

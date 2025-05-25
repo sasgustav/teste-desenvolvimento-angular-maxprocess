@@ -60,9 +60,8 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    const form = fixture.debugElement.query(
-      By.directive(LoginFormComponent)
-    ).componentInstance as LoginFormComponent;
+    const form = fixture.debugElement.query(By.directive(LoginFormComponent))
+      .componentInstance as LoginFormComponent;
     expect(form.username).toBe('stored');
     localStorage.removeItem('rememberedUsername');
   });

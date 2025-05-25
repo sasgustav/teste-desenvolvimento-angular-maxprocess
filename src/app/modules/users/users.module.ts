@@ -14,11 +14,7 @@ import { ToastModule } from 'primeng/toast';
 import { SkeletonModule } from 'primeng/skeleton';
 
 @NgModule({
-  declarations: [
-    UserFilterComponent,
-    UserTableComponent,
-    UserListComponent,
-  ],
+  declarations: [UserFilterComponent, UserTableComponent, UserListComponent],
   imports: [
     CommonModule,
     FormsModule,
