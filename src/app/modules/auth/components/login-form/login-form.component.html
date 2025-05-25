@@ -4,7 +4,10 @@
     <i class="fa-solid fa-user"></i>
     <input
       id="username"
+      type="email"
       [(ngModel)]="username"
+      #email="ngModel"
+      required
       pInputText
       class="w-full"
       placeholder="Usuário"
@@ -12,6 +15,9 @@
       autocomplete="username"
     />
   </span>
+  <div *ngIf="email.invalid && email.touched" class="error-message">
+    E-mail inválido
+  </div>
 </div>
 <div class="login-field">
   <span class="p-input-icon-left w-full">

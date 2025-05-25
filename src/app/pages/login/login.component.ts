@@ -41,8 +41,13 @@ export class LoginComponent implements OnInit, OnDestroy {
     remember: boolean;
   }): void {
     this.error = '';
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!credentials.username.trim() || !credentials.password.trim()) {
       this.error = 'Informe usuário e senha';
+      return;
+    }
+    if (!emailRegex.test(credentials.username)) {
+      this.error = 'E-mail inválido';
       return;
     }
     this.loading = true;
