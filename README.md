@@ -255,7 +255,11 @@ Este projeto está licenciado sob a licença [MIT](./LICENSE).
 
 ## Contato
 
-Desenvolvido por **Gustavo Vasconcelos**.
-Em caso de dúvidas ou sugestões, sinta-se à vontade para entrar em contato:
+Desenvolvido com dedicação por **Gustavo Vasconcelos** — Tech Lead e Especialista em Front-End.
 
-* [**LinkedIn**](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
+Se você tiver dúvidas, sugestões, propostas de melhoria ou quiser trocar ideias sobre Angular, arquitetura de software ou desenvolvimento web, sinta-se à vontade para entrar em contato:
+
+- 🌐 [**LinkedIn** – Conecte-se comigo](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
+
+Fique à vontade para **abrir issues**, contribuir com melhorias ou dar um ⭐ no repositório.
+Obrigado por visitar e bom desenvolvimento!
