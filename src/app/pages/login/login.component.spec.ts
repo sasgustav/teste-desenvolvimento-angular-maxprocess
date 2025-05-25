@@ -55,6 +55,11 @@ describe('LoginComponent', () => {
     expect(component.error).toBe('Credenciais inválidas');
   });
 
+  it('should show email invalid error', () => {
+    component.login({ username: 'invalid', password: 'pass', remember: false });
+    expect(component.error).toBe('E-mail inválido');
+  });
+
   it('should pre-fill stored username', () => {
     localStorage.setItem('rememberedUsername', 'stored');
     fixture = TestBed.createComponent(LoginComponent);
