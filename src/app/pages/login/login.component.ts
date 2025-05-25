@@ -69,12 +69,11 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.router.navigate(['/home']);
         this.loading = false;
       },
-        },
-        error: () => {
-          this.error = 'Credenciais inválidas';
-          this.loading = false;
-        },
-      });
+      error: () => {
+        this.error = 'Credenciais inválidas';
+        this.loading = false;
+      },
+    });
   }
 
   ngOnDestroy(): void {

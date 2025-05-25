@@ -1,7 +1,70 @@
+:root {
+  --footer-bg: #222;
+  --footer-text: #eee;
+  --footer-link: #ccc;
+  --footer-link-hover: #fff;
+  --footer-icon-size: 1.5rem;
+  --footer-padding: 1.5rem 2rem;
+}
+
 .app-footer {
-  margin-top: auto;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  padding: var(--footer-padding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-icon {
+  font-size: var(--footer-icon-size);
+  color: var(--footer-link);
+}
+
+.footer-text {
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-link {
+  color: var(--footer-link);
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--footer-link-hover);
+}
+
+.footer-note {
+  flex-basis: 100%;
   text-align: center;
-  padding: 1rem 0;
-  background: #f0f0f0;
-  color: #555;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 600px) {
+  .footer-note {
+    flex-basis: auto;
+    margin-top: 0;
+  }
 }
