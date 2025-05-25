@@ -52,3 +52,11 @@ app-root {
 .filters {
   margin: 3rem;
 }
+
+.login-field {
+  margin-bottom: 1rem;
+}
+
+.login-options {
+  margin-bottom: 1rem;
+}
