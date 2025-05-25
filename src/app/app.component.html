@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header *ngIf="showHeader"></app-header>
 <main class="content-wrapper">
   <app-breadcrumbs *ngIf="showBreadcrumbs"></app-breadcrumbs>
   <router-outlet></router-outlet>
