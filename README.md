@@ -31,7 +31,7 @@ Este repositório apresenta uma aplicação Angular simples focada em estudos de
   - [Licença](#licença)
   - [Contato](#contato)
 
----
+
 
 ## Visão Geral
 
@@ -44,7 +44,7 @@ Este projeto é um **teste de desenvolvimento** para demonstrar:
 
 A **Dashboard** apresenta um gráfico simples para ilustrar como podemos integrar bibliotecas de charting e destacar informações relevantes ao usuário.
 
----
+
 
 ## Tecnologias Utilizadas
 
@@ -54,8 +54,6 @@ A **Dashboard** apresenta um gráfico simples para ilustrar como podemos integra
 * **json-server** para simular API
 * **Jasmine** + **Karma** para testes unitários
 * **Protractor** (ou Cypress, caso adapte) para testes E2E
-
----
 
 ## Funcionalidades
 
@@ -81,7 +79,7 @@ npm install -g @angular/cli json-server
 
 *ou use o `npx` sempre que precisar.*
 
----
+
 
 ## Instalação
 
