@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
   private subscription!: Subscription;
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(public auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.userName = this.auth.getUserName() || '';
