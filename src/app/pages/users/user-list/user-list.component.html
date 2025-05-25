@@ -43,8 +43,6 @@
     dataKey="id"
     responsiveLayout="stack"
     breakpoint="768px"
-    [scrollable]="true"
-    scrollHeight="400px"
     aria-label="Tabela de usuários"
   >
     <ng-template pTemplate="caption">
@@ -59,9 +57,7 @@
     <ng-template pTemplate="header">
       <tr>
         <th pSortableColumn="id">ID <p-sortIcon field="id"></p-sortIcon></th>
-        <th>Avatar</th>
-        <th pSortableColumn="name">Nome <p-sortIcon field="name"></p-sortIcon></th>
-        <th pSortableColumn="email">E-mail <p-sortIcon field="email"></p-sortIcon></th>
+        <th>Usuário</th>
         <th pSortableColumn="profile">Perfil <p-sortIcon field="profile"></p-sortIcon></th>
         <th>Ações</th>
       </tr>
@@ -70,10 +66,14 @@
       <tr>
         <td>{{ user.id }}</td>
         <td>
-          <img [src]="user.avatarUrl" class="avatar" alt="{{ user.name }}" />
+          <div class="user-card">
+            <img [src]="user.avatarUrl" class="avatar" alt="{{ user.name }}" />
+            <div class="info">
+              <div class="name">{{ user.name }}</div>
+              <small class="email">{{ user.email }}</small>
+            </div>
+          </div>
         </td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.email }}</td>
         <td>{{ user.profile }}</td>
         <td class="actions">
           <button
@@ -97,7 +97,7 @@
     </ng-template>
     <ng-template pTemplate="emptymessage">
       <tr>
-        <td [attr.colspan]="6">Nenhum usuário encontrado</td>
+        <td [attr.colspan]="4">Nenhum usuário encontrado</td>
       </tr>
     </ng-template>
   </p-table>

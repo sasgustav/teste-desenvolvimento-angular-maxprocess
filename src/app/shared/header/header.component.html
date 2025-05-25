@@ -37,6 +37,10 @@
       </a>
     </ng-template>
     <ng-template pTemplate="end">
+      <div class="user-info">
+        <div class="username">{{ userName }}</div>
+        <small class="email">{{ userEmail }}</small>
+      </div>
       <button
         *ngIf="auth.isLoggedIn()"
         pButton
@@ -49,10 +53,6 @@
     </ng-template>
   </p-menubar>
 
-  <div class="user-info" *ngIf="showMenu">
-    <span class="username">{{ userName }}</span>
-    <small class="email">{{ userEmail }}</small>
-  </div>
 
   <p-sidebar
     *ngIf="showMenu"
