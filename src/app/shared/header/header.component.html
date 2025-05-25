@@ -1,57 +1,24 @@
+<!-- src/app/shared/header/header.component.html -->
 <header class="app-header">
-  <nav class="nav-bar">
-    <div class="left">
-      <button
-        class="menu-btn"
-        type="button"
-        (click)="toggleMenu()"
-        aria-label="Menu"
-      >
-        <i class="pi pi-bars"></i>
-      </button>
-      <div class="logo">
-        <i class="pi pi-briefcase"></i>
-        <span>{{ title }}</span>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="logo">MaxProcess</span>
+    </div>
+    <button class="burger" (click)="toggleMenu()" aria-label="Menu">
+      <i class="fa fa-bars"></i>
+    </button>
+    <nav [class.open]="isMenuOpen">
+      <ul class="nav-list">
+        <li *ngFor="let item of navItems" (click)="navigate(item.path)" routerLinkActive="active">
+          <i [class]="item.iconClass"></i>
+          <span>{{ item.label }}</span>
+        </li>
+      </ul>
+      <div class="user-section">
+        <div class="user-name">{{ userName }}</div>
+        <small class="user-email">{{ userEmail }}</small>
+        <button class="logout-btn" (click)="logout()">Sair</button>
       </div>
-    </div>
-
-    <ul class="nav-links">
-      <li *ngFor="let i of items">
-        <a
-          [routerLink]="i.routerLink"
-          routerLinkActive="active"
-          (click)="isMenuOpen = false"
-        >
-          <i [ngClass]="i.icon"></i>{{ i.label }}
-        </a>
-      </li>
-    </ul>
-
-    <div class="right">
-      <div class="user">
-        <div class="name">{{ userName }}</div>
-        <small class="email">{{ userEmail }}</small>
-      </div>
-      <button class="logout-btn" type="button" (click)="logout()">Sair</button>
-    </div>
-  </nav>
-
-  <div class="mobile-nav" [class.open]="isMenuOpen">
-    <ul>
-      <li *ngFor="let i of items">
-        <a
-          [routerLink]="i.routerLink"
-          routerLinkActive="active"
-          (click)="toggleMenu()"
-        >
-          <i [ngClass]="i.icon"></i>{{ i.label }}
-        </a>
-      </li>
-    </ul>
-    <div class="mobile-user">
-      <div class="name">{{ userName }}</div>
-      <small class="email">{{ userEmail }}</small>
-      <button class="logout-btn" type="button" (click)="logout()">Sair</button>
-    </div>
+    </nav>
   </div>
 </header>

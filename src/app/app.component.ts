@@ -1,59 +1,41 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+// src/app/app.component.ts
+import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { AuthService } from './core/auth.service';
-import { Subscription } from 'rxjs';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit, OnDestroy {
-  menuItems: MenuItem[] = [];
-  startTemplate = 'MaxProcess - Gustavo Vasconcelos';
+export class AppComponent {
+  menuItems: MenuItem[] = [
+    { label: 'Home', routerLink: '/home', icon: 'pi pi-home' },
+    {
+      label: 'Usuários',
+      icon: 'pi pi-users',
+      items: [
+        { label: 'Listar Usuários', routerLink: '/users', icon: 'pi pi-list' }
+      ]
+    },
+    { label: 'Sair', icon: 'pi pi-sign-out', command: () => this.logout() }
+  ];
+
+  startTemplate = 'MaxProcess';
   showBreadcrumbs = true;
-  private subscription!: Subscription;
 
   constructor(private auth: AuthService, private router: Router) {
-    this.subscription = this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        const url = event.urlAfterRedirects;
-        const isAuthPage =
-          url.includes('/auth/login') || url.includes('/auth/forgot-password');
-        this.showBreadcrumbs = !isAuthPage;
-        this.startTemplate = isAuthPage
-          ? 'Aplicação Teste Frontend MaxProcess'
-          : 'MaxProcess';
-        this.menuItems = isAuthPage ? [] : this.buildMenu();
+    this.router.events.subscribe(e => {
+      if (e instanceof NavigationEnd) {
+        const url = e.urlAfterRedirects;
+        this.showBreadcrumbs = !url.includes('/auth/login') && !url.includes('/auth/forgot-password');
       }
     });
-  }
-
-  ngOnInit(): void {
-    this.menuItems = this.buildMenu();
-  }
-
-  ngOnDestroy(): void {
-    this.subscription?.unsubscribe();
   }
 
   logout() {
     this.auth.logout();
     this.router.navigate(['/auth/login']);
-  }
-
-  private buildMenu(): MenuItem[] {
-    const items: MenuItem[] = [
-      { label: 'Home', routerLink: '/home', icon: 'pi pi-home' },
-      {
-        label: 'Usuários',
-        icon: 'pi pi-users',
-        items: [
-          { label: 'Lista', routerLink: '/users', icon: 'pi pi-list' },
-        ]
-      }
-    ];
-    return items;
   }
 }

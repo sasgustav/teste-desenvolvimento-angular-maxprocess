@@ -1,39 +1,60 @@
 // src/app/shared/header/header.component.ts
-import { Component, Input, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
-import { Router } from '@angular/router';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
+
+interface NavItem {
+  label: string;
+  path: string;
+  iconClass: string;
+}
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() items: MenuItem[] = [];
-  @Input() title = '';
-
   userName = '';
   userEmail = '';
   isMenuOpen = false;
+  isMobile = window.innerWidth <= 768;
 
-  constructor(
-    public auth: AuthService,
-    private router: Router,
-  ) {}
+  navItems: NavItem[] = [
+    { label: 'Dashboard', path: '/home', iconClass: 'fa fa-home' },
+    { label: 'Usuários', path: '/users', iconClass: 'fa fa-users' }
+  ];
+
+  constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
-    this.userName = this.auth.getUserName() || '';
+    this.userName = this.auth.getUserName() || 'Usuário';
     this.userEmail = this.auth.getUserEmail() || '';
+    this.router.events.subscribe(evt => {
+      if (evt instanceof NavigationEnd && this.isMobile) {
+        this.isMenuOpen = false;
+      }
+    });
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.isMobile = window.innerWidth <= 768;
+    if (!this.isMobile) {
+      this.isMenuOpen = false;
+    }
   }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  navigate(path: string): void {
+    this.router.navigate([path]);
+  }
+
   logout(): void {
     this.auth.logout();
     this.router.navigate(['/auth/login']);
-    this.isMenuOpen = false;
   }
 }
