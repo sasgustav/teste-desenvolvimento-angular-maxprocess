@@ -19,7 +19,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userName = '';
   userEmail = '';
   showMenu = true;
+  isMobileMenuOpen = false;
+  isMobile = window.innerWidth <= 768;
+  isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
   private subscription!: Subscription;
+
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
@@ -38,6 +42,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private updateMenuVisibility(url: string): void {
     this.showMenu =
       !url.includes('/auth/login') && !url.includes('/auth/forgot-password');
+  }
+
+  toggleMobileMenu(): void {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.isMobileMenuOpen = false;
+  }
+
+  handleItemCommand(item: MenuItem, originalEvent: Event): void {
+    item.command?.({ originalEvent, item });
+    this.closeMobileMenu();
   }
 
   logout(): void {

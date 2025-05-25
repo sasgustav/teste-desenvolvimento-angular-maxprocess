@@ -6,6 +6,11 @@ import { UserListContainerComponent } from './containers/user-list-container/use
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../../shared/shared.module';
 import { UsersRoutingModule } from './users-routing.module';
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -13,6 +18,16 @@ import { UsersRoutingModule } from './users-routing.module';
     UserTableComponent,
     UserListContainerComponent,
   ],
-  imports: [CommonModule, FormsModule, SharedModule, UsersRoutingModule]
+  imports: [
+    CommonModule,
+    FormsModule,
+    SharedModule,
+    UsersRoutingModule,
+    TableModule,
+    InputTextModule,
+    ButtonModule,
+    ConfirmDialogModule,
+    ToastModule,
+  ]
 })
 export class UsersModule {}

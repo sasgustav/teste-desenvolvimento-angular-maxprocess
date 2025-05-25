@@ -1,5 +1,6 @@
 <nav class="header-nav" aria-label="Menu principal" role="navigation">
   <p-menubar
+    *ngIf="showMenu"
     [model]="items"
     class="app-menubar"
     role="menubar"
@@ -37,6 +38,7 @@
     </ng-template>
     <ng-template pTemplate="end">
       <button
+        *ngIf="auth.isLoggedIn()"
         pButton
         type="button"
         icon="pi pi-sign-out"
@@ -47,12 +49,13 @@
     </ng-template>
   </p-menubar>
 
-  <div class="user-info">
+  <div class="user-info" *ngIf="showMenu">
     <span class="username">{{ userName }}</span>
     <small class="email">{{ userEmail }}</small>
   </div>
 
   <p-sidebar
+    *ngIf="showMenu"
     [(visible)]="isMobileMenuOpen"
     position="left"
     [baseZIndex]="10000"

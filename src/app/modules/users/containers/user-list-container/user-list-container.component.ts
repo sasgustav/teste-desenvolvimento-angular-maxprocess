@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { UserService } from '../../../../core/user.service';
-import { User } from '../../../../models/user';
+import { UserService } from 'src/app/core/user.service';
+import { User } from 'src/app/models/user';
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { Subscription } from 'rxjs';
 

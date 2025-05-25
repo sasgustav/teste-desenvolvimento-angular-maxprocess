@@ -1,7 +1,8 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
 import { MessageService } from 'primeng/api';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +11,10 @@ import { MessageService } from 'primeng/api';
   providers: [MessageService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   error = '';
   loading = false;
+  private subscription!: Subscription;
 
   constructor(
     private auth: AuthService,
@@ -55,20 +57,27 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.loading = true;
-    this.auth.login(credentials.username, credentials.password).subscribe({
-      next: () => {
-        if (credentials.remember) {
-          localStorage.setItem('rememberedUsername', credentials.username);
+    this.subscription = this.auth
+      .login(credentials.username, credentials.password)
+      .subscribe({
+        next: () => {
+          if (credentials.remember) {
+            localStorage.setItem('rememberedUsername', credentials.username);
         } else {
           localStorage.removeItem('rememberedUsername');
         }
         this.router.navigate(['/home']);
         this.loading = false;
       },
-      error: () => {
-        this.error = 'Credenciais inválidas';
-        this.loading = false;
-      },
-    });
+        },
+        error: () => {
+          this.error = 'Credenciais inválidas';
+          this.loading = false;
+        },
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
   }
 }

@@ -6,6 +6,10 @@
   font-size: 2rem;
 }
 
+.metric-header {
+  margin-bottom: 0.5rem;
+}
+
 .metric-content {
   display: flex;
   flex-direction: column;

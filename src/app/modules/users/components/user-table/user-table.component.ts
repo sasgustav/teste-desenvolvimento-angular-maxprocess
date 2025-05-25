@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { User } from '../../../../models/user';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-user-table',
