@@ -17,6 +17,7 @@ import { Subscription } from 'rxjs';
 export class LoginComponent implements OnInit, OnDestroy {
   error = '';
   loading = false;
+  rememberedUsername = '';
   private subscription!: Subscription;
 
   constructor(
@@ -34,7 +35,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // lembrado via localStorage é passado para o componente filho
+    this.rememberedUsername =
+      localStorage.getItem('rememberedUsername') ?? '';
   }
 
   /**
