@@ -11,7 +11,7 @@ describe('Fluxo completo de exclusão', () => {
     ]).as('getUsers');
     cy.intercept('DELETE', '/users/1', {}).as('delUser');
 
-    cy.contains('Usuários').click();
+    cy.contains('button', 'Usuários').focus().type('{enter}');
     cy.wait('@getUsers');
     cy.get('table tbody tr').should('have.length', 1);
     cy.get('button[aria-label="Excluir"]').click();
