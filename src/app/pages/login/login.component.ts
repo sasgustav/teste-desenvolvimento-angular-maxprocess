@@ -1,4 +1,9 @@
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
 import { MessageService } from 'primeng/api';
@@ -50,7 +55,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
   }
 
-  login(credentials: { username: string; password: string; remember: boolean }): void {
+  login(credentials: {
+    username: string;
+    password: string;
+    remember: boolean;
+  }): void {
     this.error = '';
     if (!credentials.username.trim() || !credentials.password.trim()) {
       this.error = 'Informe usuário e senha';
@@ -63,17 +72,17 @@ export class LoginComponent implements OnInit, OnDestroy {
         next: () => {
           if (credentials.remember) {
             localStorage.setItem('rememberedUsername', credentials.username);
-        } else {
-          localStorage.removeItem('rememberedUsername');
-        }
-        this.router.navigate(['/home']);
-        this.loading = false;
-      },
-      error: () => {
-        this.error = 'Credenciais inválidas';
-        this.loading = false;
-      },
-    });
+          } else {
+            localStorage.removeItem('rememberedUsername');
+          }
+          this.router.navigate(['/home']);
+          this.loading = false;
+        },
+        error: () => {
+          this.error = 'Credenciais inválidas';
+          this.loading = false;
+        },
+      });
   }
 
   ngOnDestroy(): void {

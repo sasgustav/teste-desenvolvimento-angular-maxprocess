@@ -18,7 +18,7 @@ export class AuthService {
     return this.http
       .post<{ token: string }>(`${this.api}/login`, { username, password })
       .pipe(
-        tap(res => {
+        tap((res) => {
           localStorage.setItem('token', res.token);
           localStorage.setItem('userEmail', username);
           const name = username.split('@')[0];

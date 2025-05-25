@@ -16,7 +16,7 @@ describe('UsersComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [UsersComponent],
       imports: [SharedModule],
-      providers: [{ provide: UserService, useValue: service }]
+      providers: [{ provide: UserService, useValue: service }],
     }).compileComponents();
   });
 

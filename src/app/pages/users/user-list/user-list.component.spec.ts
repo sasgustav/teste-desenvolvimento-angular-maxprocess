@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { of } from 'rxjs';
 import { ConfirmationService, MessageService } from 'primeng/api';
@@ -13,7 +18,7 @@ describe('UserListComponent', () => {
 
   const mockUsers: User[] = [
     { id: 1, name: 'John', email: 'john@test.com' } as User,
-    { id: 2, name: 'Jane', email: 'jane@test.com' } as User
+    { id: 2, name: 'Jane', email: 'jane@test.com' } as User,
   ];
 
   beforeEach(async () => {
@@ -26,9 +31,9 @@ describe('UserListComponent', () => {
       providers: [
         { provide: UserService, useValue: service },
         ConfirmationService,
-        MessageService
+        MessageService,
       ],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 

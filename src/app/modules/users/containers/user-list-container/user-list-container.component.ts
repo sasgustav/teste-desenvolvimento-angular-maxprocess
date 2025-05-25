@@ -38,7 +38,10 @@ export class UserListContainerComponent implements OnInit, OnDestroy {
         this.filteredUsers = [...this.users];
       },
       error: () => {
-        this.messageService.add({ severity: 'error', summary: 'Erro ao carregar usuários' });
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Erro ao carregar usuários',
+        });
         this.loading = false;
       },
       complete: () => {
@@ -49,8 +52,12 @@ export class UserListContainerComponent implements OnInit, OnDestroy {
 
   onFilter(change: { name: string; email: string }): void {
     this.filteredUsers = this.users.filter((u) => {
-      const nameMatch = u.name?.toLowerCase().includes(change.name.toLowerCase());
-      const emailMatch = u.email.toLowerCase().includes(change.email.toLowerCase());
+      const nameMatch = u.name
+        ?.toLowerCase()
+        .includes(change.name.toLowerCase());
+      const emailMatch = u.email
+        .toLowerCase()
+        .includes(change.email.toLowerCase());
       return nameMatch && emailMatch;
     });
   }
@@ -83,11 +90,17 @@ export class UserListContainerComponent implements OnInit, OnDestroy {
     }
     this.userService.deleteUser(user.id).subscribe({
       next: () => {
-        this.messageService.add({ severity: 'success', summary: 'Usuário excluído' });
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Usuário excluído',
+        });
         this.loadUsers();
       },
       error: () => {
-        this.messageService.add({ severity: 'error', summary: 'Erro ao excluir usuário' });
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Erro ao excluir usuário',
+        });
       },
     });
   }

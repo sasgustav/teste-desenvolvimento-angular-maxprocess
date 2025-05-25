@@ -5,5 +5,5 @@ export const environment = {
    * padrao o servidor mock roda em http://localhost:3000
    * conforme instrucoes do README.
    */
-  apiBase: 'http://localhost:3000'
+  apiBase: 'http://localhost:3000',
 };

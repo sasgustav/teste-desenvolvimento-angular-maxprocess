@@ -10,7 +10,7 @@ describe('MetricsGridComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [MetricsGridComponent],
-      schemas: [NO_ERRORS_SCHEMA]
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   });
 
@@ -27,7 +27,7 @@ describe('MetricsGridComponent', () => {
   it('should render a card for each metric', () => {
     component.metrics = [
       { title: 'Users', value: 10, icon: 'user', color: 'red' },
-      { title: 'Sales', value: 5, icon: 'cart', color: 'blue' }
+      { title: 'Sales', value: 5, icon: 'cart', color: 'blue' },
     ] as any;
     fixture.detectChanges();
     const cards = fixture.debugElement.queryAll(By.css('app-metric-card'));

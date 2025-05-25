@@ -4,11 +4,11 @@ import { UserListContainerComponent } from './containers/user-list-container/use
 import { AuthGuard } from '../../core/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: UserListContainerComponent, canActivate: [AuthGuard] }
+  { path: '', component: UserListContainerComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class UsersRoutingModule {}

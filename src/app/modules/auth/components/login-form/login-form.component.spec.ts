@@ -9,7 +9,7 @@ describe('LoginFormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [LoginFormComponent],
-      imports: [FormsModule]
+      imports: [FormsModule],
     }).compileComponents();
   });
 
@@ -29,6 +29,10 @@ describe('LoginFormComponent', () => {
     component.password = 'pass';
     component.remember = true;
     component.submit();
-    expect(component.login.emit).toHaveBeenCalledWith({ username: 'user', password: 'pass', remember: true });
+    expect(component.login.emit).toHaveBeenCalledWith({
+      username: 'user',
+      password: 'pass',
+      remember: true,
+    });
   });
 });

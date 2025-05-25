@@ -19,8 +19,8 @@ describe('LoginComponent', () => {
       imports: [FormsModule],
       providers: [
         { provide: AuthService, useValue: auth },
-        { provide: Router, useValue: router }
-      ]
+        { provide: Router, useValue: router },
+      ],
     }).compileComponents();
   });
 

@@ -32,6 +32,6 @@ import { SkeletonModule } from 'primeng/skeleton';
     ConfirmDialogModule,
     ToastModule,
     SkeletonModule,
-  ]
+  ],
 })
 export class UsersModule {}

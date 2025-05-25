@@ -1,4 +1,9 @@
-import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { ForgotPasswordComponent } from './forgot-password.component';
@@ -11,7 +16,7 @@ describe('ForgotPasswordComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ForgotPasswordComponent],
       imports: [FormsModule],
-      providers: [MessageService]
+      providers: [MessageService],
     }).compileComponents();
   });
 

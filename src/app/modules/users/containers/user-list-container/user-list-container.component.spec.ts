@@ -19,8 +19,8 @@ describe('UserListContainerComponent', () => {
       providers: [
         { provide: UserService, useValue: service },
         ConfirmationService,
-        MessageService
-      ]
+        MessageService,
+      ],
     }).compileComponents();
   });
 
@@ -41,7 +41,7 @@ describe('UserListContainerComponent', () => {
   it('should filter users', () => {
     component.users = [
       { id: 1, name: 'Test', email: 'a@test.com' } as any,
-      { id: 2, name: 'Foo', email: 'b@bar.com' } as any
+      { id: 2, name: 'Foo', email: 'b@bar.com' } as any,
     ];
     component.onFilter({ name: 't', email: '' });
     expect(component.filteredUsers.length).toBe(1);

@@ -16,10 +16,10 @@ export class AppComponent {
       label: 'Usuários',
       icon: 'pi pi-users',
       items: [
-        { label: 'Listar Usuários', routerLink: '/users', icon: 'pi pi-list' }
-      ]
+        { label: 'Listar Usuários', routerLink: '/users', icon: 'pi pi-list' },
+      ],
     },
-    { label: 'Sair', icon: 'pi pi-sign-out', command: () => this.logout() }
+    { label: 'Sair', icon: 'pi pi-sign-out', command: () => this.logout() },
   ];
 
   startTemplate = 'MaxProcess';
@@ -27,10 +27,11 @@ export class AppComponent {
   showHeader = true;
 
   constructor(private auth: AuthService, private router: Router) {
-    this.router.events.subscribe(e => {
+    this.router.events.subscribe((e) => {
       if (e instanceof NavigationEnd) {
         const url = e.urlAfterRedirects;
-        const isAuthPage = url.includes('/auth/login') || url.includes('/auth/forgot-password');
+        const isAuthPage =
+          url.includes('/auth/login') || url.includes('/auth/forgot-password');
         this.showBreadcrumbs = !isAuthPage;
         this.showHeader = !isAuthPage;
       }

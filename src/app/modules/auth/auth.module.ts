@@ -37,6 +37,6 @@ import { ToastModule } from 'primeng/toast';
     ButtonModule,
     MessageModule,
     ToastModule,
-  ]
+  ],
 })
 export class AuthModule {}

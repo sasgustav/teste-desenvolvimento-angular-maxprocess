@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit, OnDestroy {
   usuarios: User[] = [];
@@ -15,9 +15,11 @@ export class UsersComponent implements OnInit, OnDestroy {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.subscription = this.userService.getUsers().subscribe((data: User[]) => {
-      this.usuarios = data;
-    });
+    this.subscription = this.userService
+      .getUsers()
+      .subscribe((data: User[]) => {
+        this.usuarios = data;
+      });
   }
 
   ngOnDestroy(): void {

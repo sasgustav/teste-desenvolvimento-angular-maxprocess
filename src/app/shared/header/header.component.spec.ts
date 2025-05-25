@@ -11,13 +11,17 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     router = jasmine.createSpyObj('Router', ['navigate']);
-    auth = jasmine.createSpyObj('AuthService', ['getUserName', 'getUserEmail', 'logout']);
+    auth = jasmine.createSpyObj('AuthService', [
+      'getUserName',
+      'getUserEmail',
+      'logout',
+    ]);
     await TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       providers: [
         { provide: Router, useValue: router },
-        { provide: AuthService, useValue: auth }
-      ]
+        { provide: AuthService, useValue: auth },
+      ],
     }).compileComponents();
   });
 

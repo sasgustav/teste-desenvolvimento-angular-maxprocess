@@ -12,7 +12,7 @@ interface NavItem {
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   userName = '';
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
 
   navItems: NavItem[] = [
     { label: 'Dashboard', path: '/home', icon: 'fa fa-home' },
-    { label: 'Usuários', path: '/users', icon: 'fa fa-users' }
+    { label: 'Usuários', path: '/users', icon: 'fa fa-users' },
   ];
 
   constructor(private auth: AuthService, private router: Router) {}
@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.userName = this.auth.getUserName() || 'Usuário';
     this.userEmail = this.auth.getUserEmail() || '';
-    this.router.events.subscribe(evt => {
+    this.router.events.subscribe((evt) => {
       if (evt instanceof NavigationEnd && this.isMobile) {
         this.isMenuOpen = false;
       }
@@ -75,4 +75,3 @@ export class HeaderComponent implements OnInit {
     }
   }
 }
-

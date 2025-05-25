@@ -8,7 +8,7 @@ describe('UserProfileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [UserProfileComponent]
+      declarations: [UserProfileComponent],
     }).compileComponents();
   });
 
@@ -25,7 +25,9 @@ describe('UserProfileComponent', () => {
   });
 
   it('should display user info', () => {
-    const nameEl = fixture.debugElement.query(By.css('.username')).nativeElement;
+    const nameEl = fixture.debugElement.query(
+      By.css('.username')
+    ).nativeElement;
     const emailEl = fixture.debugElement.query(By.css('.email')).nativeElement;
     expect(nameEl.textContent).toContain('John');
     expect(emailEl.textContent).toContain('john@test.com');

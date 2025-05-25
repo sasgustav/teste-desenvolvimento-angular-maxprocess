@@ -7,7 +7,7 @@ describe('SocialLoginButtonsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [SocialLoginButtonsComponent]
+      declarations: [SocialLoginButtonsComponent],
     }).compileComponents();
   });
 

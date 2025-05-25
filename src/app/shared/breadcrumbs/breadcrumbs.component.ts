@@ -11,7 +11,7 @@ interface Breadcrumb {
 @Component({
   selector: 'app-breadcrumbs',
   templateUrl: './breadcrumbs.component.html',
-  styleUrls: ['./breadcrumbs.component.css']
+  styleUrls: ['./breadcrumbs.component.css'],
 })
 export class BreadcrumbsComponent implements OnInit, OnDestroy {
   breadcrumbs: Breadcrumb[] = [];
@@ -22,7 +22,7 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.router.events
       .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
-      .subscribe(event => {
+      .subscribe((event) => {
         this.breadcrumbs = this.buildBreadcrumbs(event.urlAfterRedirects);
       });
   }
@@ -32,9 +32,9 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
   }
 
   private buildBreadcrumbs(url: string): Breadcrumb[] {
-    const segments = url.split('/').filter(s => s);
+    const segments = url.split('/').filter((s) => s);
     let path = '';
-    return segments.map(segment => {
+    return segments.map((segment) => {
       path += `/${segment}`;
       return { label: this.formatLabel(segment), url: path };
     });
@@ -42,10 +42,14 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
 
   private formatLabel(segment: string): string {
     switch (segment) {
-      case 'home':  return 'Home';
-      case 'users': return 'Usuários';
-      case 'auth':  return 'Login';
-      default:      return segment.charAt(0).toUpperCase() + segment.slice(1);
+      case 'home':
+        return 'Home';
+      case 'users':
+        return 'Usuários';
+      case 'auth':
+        return 'Login';
+      default:
+        return segment.charAt(0).toUpperCase() + segment.slice(1);
     }
   }
 }

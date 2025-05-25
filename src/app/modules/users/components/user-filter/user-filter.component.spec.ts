@@ -9,7 +9,7 @@ describe('UserFilterComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [UserFilterComponent],
-      imports: [FormsModule]
+      imports: [FormsModule],
     }).compileComponents();
   });
 
@@ -28,7 +28,10 @@ describe('UserFilterComponent', () => {
     component.filterName = 't';
     component.filterEmail = 'e';
     component.apply();
-    expect(component.filterChange.emit).toHaveBeenCalledWith({ name: 't', email: 'e' });
+    expect(component.filterChange.emit).toHaveBeenCalledWith({
+      name: 't',
+      email: 'e',
+    });
   });
 
   it('should clear filters', () => {

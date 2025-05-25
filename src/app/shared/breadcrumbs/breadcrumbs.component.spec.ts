@@ -12,9 +12,7 @@ describe('BreadcrumbsComponent', () => {
     events$ = new Subject();
     await TestBed.configureTestingModule({
       declarations: [BreadcrumbsComponent],
-      providers: [
-        { provide: Router, useValue: { events: events$ } }
-      ]
+      providers: [{ provide: Router, useValue: { events: events$ } }],
     }).compileComponents();
   });
 

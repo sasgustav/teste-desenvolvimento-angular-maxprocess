@@ -1,4 +1,10 @@
-import { Component, EventEmitter, Output, Input, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Output,
+  Input,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-login-form',
@@ -13,9 +19,17 @@ export class LoginFormComponent {
   @Input() error = '';
   @Input() loading = false;
 
-  @Output() login = new EventEmitter<{ username: string; password: string; remember: boolean }>();
+  @Output() login = new EventEmitter<{
+    username: string;
+    password: string;
+    remember: boolean;
+  }>();
 
   submit(): void {
-    this.login.emit({ username: this.username, password: this.password, remember: this.remember });
+    this.login.emit({
+      username: this.username,
+      password: this.password,
+      remember: this.remember,
+    });
   }
 }

@@ -16,6 +16,6 @@ import { ChartModule } from 'primeng/chart';
     HomeRoutingModule,
     CardModule,
     ChartModule,
-  ]
+  ],
 })
 export class HomeModule {}

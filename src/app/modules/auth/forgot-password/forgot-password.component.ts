@@ -7,7 +7,7 @@ import { MessageService } from 'primeng/api';
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [MessageService]
+  providers: [MessageService],
 })
 export class ForgotPasswordComponent {
   email = '';
@@ -22,7 +22,7 @@ export class ForgotPasswordComponent {
       this.messageService.add({
         severity: 'success',
         summary: 'Link enviado',
-        detail: 'Confira seu e-mail (demo).'
+        detail: 'Confira seu e-mail (demo).',
       });
       this.email = '';
     }, 1000);

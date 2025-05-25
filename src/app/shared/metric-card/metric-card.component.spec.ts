@@ -9,7 +9,7 @@ describe('MetricCardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [MetricCardComponent],
-      imports: [CardModule]
+      imports: [CardModule],
     }).compileComponents();
   });
 

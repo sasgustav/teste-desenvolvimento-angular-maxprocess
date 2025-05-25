@@ -6,5 +6,5 @@ export const environment = {
    * servidor de mock para facilitar o build em
    * ambientes locais.
    */
-  apiBase: 'http://localhost:3000'
+  apiBase: 'http://localhost:3000',
 };

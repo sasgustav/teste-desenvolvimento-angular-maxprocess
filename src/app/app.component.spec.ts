@@ -16,9 +16,12 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [AppComponent],
       providers: [
-        { provide: Router, useValue: { events: routerEvents$, navigate: () => {} } },
-        { provide: AuthService, useValue: auth }
-      ]
+        {
+          provide: Router,
+          useValue: { events: routerEvents$, navigate: () => {} },
+        },
+        { provide: AuthService, useValue: auth },
+      ],
     }).compileComponents();
   });
 
