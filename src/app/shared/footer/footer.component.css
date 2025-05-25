@@ -45,6 +45,7 @@
 }
 
 .footer-link {
+  text-decoration: solid;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
