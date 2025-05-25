@@ -17,6 +17,11 @@
   align-items: center;
 }
 
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .filters .p-input-icon-left input {
   background: var(--input-bg);
 }

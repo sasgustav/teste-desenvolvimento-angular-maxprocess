@@ -11,6 +11,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
+import { SkeletonModule } from 'primeng/skeleton';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ToastModule } from 'primeng/toast';
     ButtonModule,
     ConfirmDialogModule,
     ToastModule,
+    SkeletonModule,
   ]
 })
 export class UsersModule {}

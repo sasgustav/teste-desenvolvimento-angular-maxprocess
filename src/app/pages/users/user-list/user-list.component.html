@@ -1,6 +1,6 @@
 <div class="user-list-container">
   <div class="filters" aria-label="Filtros">
-    <span class="p-input-icon-left">
+    <span class="p-input-icon-left filter-field">
       <i class="pi pi-search"></i>
       <input
         pInputText
@@ -9,10 +9,10 @@
         [(ngModel)]="filterName"
         (input)="applyFilters()"
         aria-label="Buscar por nome"
-        class="w-full"
+        styleClass="w-full"
       />
     </span>
-    <span class="p-input-icon-left">
+    <span class="p-input-icon-left filter-field">
       <i class="pi pi-search"></i>
       <input
         pInputText
@@ -21,7 +21,7 @@
         [(ngModel)]="filterEmail"
         (input)="applyFilters()"
         aria-label="Buscar por e-mail"
-        class="w-full"
+        styleClass="w-full"
       />
     </span>
     <button
@@ -30,9 +30,11 @@
       label="Limpar filtros"
       class="clear-btn"
       (click)="clearFilters()"
+      aria-label="Limpar filtros"
     ></button>
   </div>
 
+  <div class="table-wrapper">
   <p-table
     [value]="filteredUsers"
     [paginator]="true"
@@ -101,6 +103,7 @@
       </tr>
     </ng-template>
   </p-table>
+  </div>
 </div>
 <p-toast></p-toast>
-<p-confirmDialog [closable]="false"></p-confirmDialog>
+<p-confirmDialog appendTo="body" [closable]="false"></p-confirmDialog>
