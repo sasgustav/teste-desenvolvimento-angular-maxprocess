@@ -55,4 +55,30 @@ describe('HeaderComponent', () => {
     expect(auth.logout).toHaveBeenCalled();
     expect(router.navigate).toHaveBeenCalledWith(['/auth/login']);
   });
+
+  it('should update mobile state and close menu on resize', () => {
+    Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 500 });
+    component.isMenuOpen = true;
+    component.onResize();
+    expect(component.isMobile).toBeTrue();
+    Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 1024 });
+    component.isMenuOpen = true;
+    component.onResize();
+    expect(component.isMobile).toBeFalse();
+    expect(component.isMenuOpen).toBeFalse();
+  });
+
+  it('should close menu on escape when mobile', () => {
+    component.isMobile = true;
+    component.isMenuOpen = true;
+    component.onEscape();
+    expect(component.isMenuOpen).toBeFalse();
+  });
+
+  it('should keep menu open on escape when not mobile', () => {
+    component.isMobile = false;
+    component.isMenuOpen = true;
+    component.onEscape();
+    expect(component.isMenuOpen).toBeTrue();
+  });
 });
