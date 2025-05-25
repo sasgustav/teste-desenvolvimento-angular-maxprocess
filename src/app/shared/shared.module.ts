@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { BackToTopComponent } from './back-to-top/back-to-top.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     BreadcrumbsComponent,
     NavMenuComponent,
     UserProfileComponent,
+    BackToTopComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +43,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     BreadcrumbsComponent,
     NavMenuComponent,
     UserProfileComponent,
+    BackToTopComponent,
   ],
 })
 export class SharedModule {}
