@@ -1,74 +1,57 @@
-<nav class="header-nav" aria-label="Menu principal" role="navigation">
-  <p-menubar
-    *ngIf="showMenu"
-    [model]="items"
-    class="app-menubar"
-    role="menubar"
-    aria-label="Menu principal"
-  >
-    <ng-template pTemplate="start">
+<header class="app-header">
+  <nav class="nav-bar">
+    <div class="left">
       <button
+        class="menu-btn"
         type="button"
-        class="menu-toggle p-link"
-        (click)="toggleMobileMenu()"
-        (keydown.enter)="toggleMobileMenu()"
-        [attr.aria-expanded]="isMobileMenuOpen"
-        aria-label="Abrir menu"
+        (click)="toggleMenu()"
+        aria-label="Menu"
       >
         <i class="pi pi-bars"></i>
       </button>
-      <div class="brand" role="img" aria-label="Logo">
-        <i class="pi pi-briefcase logo-icon"></i>
-        <span class="title">{{ title }}</span>
+      <div class="logo">
+        <i class="pi pi-briefcase"></i>
+        <span>{{ title }}</span>
       </div>
-    </ng-template>
-    <ng-template pTemplate="menuitem" let-item>
-      <a
-        [routerLink]="item.routerLink"
-        [pTooltip]="isTablet ? item.label : null"
-        tooltipPosition="bottom"
-        (click)="handleItemCommand(item, $event)"
-        (keydown.enter)="handleItemCommand(item, $event)"
-        class="p-menuitem-link"
-        role="menuitem"
-      >
-        <span class="p-menuitem-icon" [ngClass]="item.icon"></span>
-        <span class="p-menuitem-text">{{ item.label }}</span>
-      </a>
-    </ng-template>
-    <ng-template pTemplate="end">
-      <div class="user-info">
-        <div class="username">{{ userName }}</div>
+    </div>
+
+    <ul class="nav-links">
+      <li *ngFor="let i of items">
+        <a
+          [routerLink]="i.routerLink"
+          routerLinkActive="active"
+          (click)="isMenuOpen = false"
+        >
+          <i [ngClass]="i.icon"></i>{{ i.label }}
+        </a>
+      </li>
+    </ul>
+
+    <div class="right">
+      <div class="user">
+        <div class="name">{{ userName }}</div>
         <small class="email">{{ userEmail }}</small>
       </div>
-      <button
-        *ngIf="auth.isLoggedIn()"
-        pButton
-        type="button"
-        icon="pi pi-sign-out"
-        label="Sair"
-        class="logout-button"
-        (click)="logout()"
-      ></button>
-    </ng-template>
-  </p-menubar>
+      <button class="logout-btn" type="button" (click)="logout()">Sair</button>
+    </div>
+  </nav>
 
-
-  <p-sidebar
-    *ngIf="showMenu"
-    [(visible)]="isMobileMenuOpen"
-    position="left"
-    [baseZIndex]="10000"
-    class="mobile-sidebar"
-    aria-label="Menu móvel"
-    ariaCloseLabel="Fechar menu"
-    (onHide)="closeMobileMenu()"
-    [modal]="true"
-  >
-    <p-panelMenu
-      [model]="items"
-      class="mobile-panel-menu"
-      (onNodeSelect)="closeMobileMenu()"
-    ></p-panelMenu>
-  </p-sidebar>
-</nav>
+  <div class="mobile-nav" [class.open]="isMenuOpen">
+    <ul>
+      <li *ngFor="let i of items">
+        <a
+          [routerLink]="i.routerLink"
+          routerLinkActive="active"
+          (click)="toggleMenu()"
+        >
+          <i [ngClass]="i.icon"></i>{{ i.label }}
+        </a>
+      </li>
+    </ul>
+    <div class="mobile-user">
+      <div class="name">{{ userName }}</div>
+      <small class="email">{{ userEmail }}</small>
+      <button class="logout-btn" type="button" (click)="logout()">Sair</button>
+    </div>
+  </div>
+</header>
