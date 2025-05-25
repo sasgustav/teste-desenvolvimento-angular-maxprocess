@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserListContainerComponent } from './containers/user-list-container/user-list-container.component';
+import { UserListComponent } from '../../pages/users/user-list/user-list.component';
 import { AuthGuard } from '../../core/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: UserListContainerComponent, canActivate: [AuthGuard] },
+  { path: '', component: UserListComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
