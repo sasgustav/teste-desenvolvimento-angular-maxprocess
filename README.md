@@ -65,7 +65,6 @@ A **Dashboard** apresenta um gráfico simples para ilustrar como podemos integra
 * **Estrutura de Layout Desacoplada**: gerenciamento de layout centralizado, facilitando a manutenção e expansão.
 * **Interceptores**: para injeção do token em requisições (pode ser adaptado para ambientes reais).
 
----
 
 ## Pré-requisitos
 
@@ -93,8 +92,6 @@ git clone <url-do-repositório>
 cd teste-desenvolvimento-angular-maxprocess
 npm install
 ```
-
----
 
 ## Execução
 
@@ -154,8 +151,6 @@ if (username === 'demo-gustavo@gmail.com' && password === '123456') {
 }
 ```
 
----
-
 ## Build para Produção
 
 Para gerar uma versão de produção, execute:
@@ -169,8 +164,6 @@ Os arquivos otimizados serão gerados em:
 ```
 dist/jwt-auth-angular
 ```
-
----
 
 ## Testes
 
@@ -200,8 +193,6 @@ npm run e2e
 
 *Observação*: Certifique-se de que a aplicação esteja rodando em `http://localhost:4200` antes de iniciar o teste E2E.
 
----
-
 ## Lint e Formatação
 
 Para garantir um código padronizado e sem problemas de estilo, utilize:
@@ -212,8 +203,6 @@ npm run format
 ```
 
 O `lint` fará a análise estática do código, enquanto o `format` aplicará a formatação de acordo com as regras estabelecidas (Prettier, etc.).
-
----
 
 ## Estrutura de Pastas
 
@@ -232,8 +221,6 @@ src/
   environments/       # Configurações por ambiente (dev, prod, etc.)
 ```
 
----
-
 ## Contribuindo
 
 Contribuições são bem-vindas! Siga os passos:
@@ -245,13 +232,9 @@ Contribuições são bem-vindas! Siga os passos:
    * `bugfix/<nome>` para correções de bugs.
 3. Envie um **Pull Request** para revisão e aprovação.
 
----
-
 ## Licença
 
 Este projeto está licenciado sob a licença [MIT](./LICENSE).
-
----
 
 ## Contato
 
