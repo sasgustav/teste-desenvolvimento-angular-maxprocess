@@ -1,4 +1,3 @@
-// src/app/app.component.ts
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { AuthService } from './core/auth.service';

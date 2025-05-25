@@ -1,4 +1,3 @@
-// src/app/modules/auth/forgot-password/forgot-password.component.ts
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MessageService } from 'primeng/api';
 

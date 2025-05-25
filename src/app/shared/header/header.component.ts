@@ -1,4 +1,3 @@
-// src/app/shared/header/header.component.ts
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../core/auth.service';
